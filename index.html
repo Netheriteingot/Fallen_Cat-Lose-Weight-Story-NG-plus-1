@@ -1,0 +1,887 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallen_Cat's Lose Weight Story</title>
+    <style>
+*{
+    text-align: center;
+    transition-duration: 0.5s;
+    font-family: 'Bahnschrift';
+  color: #FFFFFF;
+}
+.smolOuterBar {
+	height: 20px;
+	min-width: 200px;
+	width: 80%;
+	background-color: #fafafa;
+	border-radius: 5px;
+}
+
+.smolInnerBar {
+	height: 20px;
+	background-color: #ff0000;
+    transition-duration: 0.1s;
+	border-radius: 5px;
+}
+.upgCol:has(div .vers) {
+    width: 90%;
+    background: var(--changelogBackground);
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.upgCol:has(div .vers)>div:has(span>div) {
+    padding: 10px 10px 0 10px;
+}
+
+.upgCol:has(div .vers)>div>span>div {
+    background: var(--changelogColor);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.upgCol:has(div .vers)>div>span>div:has(h2) {
+    background: var(--changelogColor);
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.versions {
+    margin: 10px;
+}
+
+.vers {
+    margin-bottom: 10px;
+}
+
+.vers:only-of-type {
+    margin-bottom: 0;
+}
+
+.vers>div {
+    background: var(--changelogColor);
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+}
+
+details {
+    margin: 0;
+    background-color: rgb(251, 181, 255);
+    border-radius: 0 0 8px 8px;
+    width: 1000px;   
+    color: black;
+    border: 5px solid rgb(255, 123, 176); 
+}
+
+details:not([open]):last-of-type>summary {
+    border-radius: 0 0 8px 8px;
+}
+
+details>summary {
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    background: var(--changelogLight);
+}
+
+ul {
+    padding: 5px 5px 5px 15px;
+    background-color: rgb(254,173,205);
+    list-style: inside;
+}
+
+ul:first-of-type {
+    margin-bottom: 0;
+    padding-bottom: 2px;
+}
+
+ul:last-of-type {
+    margin-top: 0;
+    padding-top: 2px;
+}
+
+ul:only-of-type {
+    padding: 5px 5px 5px 15px;
+}
+
+*:last-of-type>ul:last-of-type {
+    border-radius: 0 0 8px 8px;
+}
+
+ul>li {
+    margin: 8px 0;
+    right: 0px;
+    list-style-position: inside;
+    text-align: left;
+}
+
+ul>li::before {
+    padding: 6px 8px;
+    margin-right: 8px;
+}
+
+ul>li:first-of-type {
+    margin: 8px 0 6px 0;
+}
+
+ul>li:first-of-type::before {
+    border-radius: 4px 4px 0 0;
+    padding: 2px 8px 6px 8px;
+}
+
+ul>li:last-of-type {
+    margin: 6px 0 8px 0;
+}
+
+ul>li:last-of-type::before {
+    border-radius: 0 0 4px 4px;
+    padding: 6px 8px 2px 8px;
+}
+
+
+ul>li:only-of-type {
+    margin: 8px 0;
+}
+
+ul>li:only-of-type::before {
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+li>a:hover {
+    text-shadow: 0 0 5px white;
+}
+
+li.Endgame::before {
+    content: "Endgame";
+    background: #fffc61;
+    color: #171717;
+}
+
+li.Added::before {
+    content: "Added";
+    background: #7eed5c;
+    color: #171717;
+}
+
+li.Changed::before {
+    content: "Changed";
+    background: #f7922d;
+    color: #171717;
+}
+
+li.Removed::before {
+    content: "Removed";
+    background: #f7634f;
+    color: #171717;
+}
+
+li.Fixed::before {
+    content: "Fixed";
+    background: #31eb63;
+    color: #171717;
+}
+#outerNews {
+	display: inline-block;
+	height: 25px;
+	width: 1500px;
+	background-color: black;
+	color: white;
+	border-top: 4px solid #888888;
+	border-bottom: 4px solid #888888;
+	text-align: left;
+	z-index: -1;
+	padding: 0 0 0 0;
+}
+
+#innerNews {
+	position: relative;
+	z-index: 0;
+	font-size: 16px;
+}
+html, body, #app {
+	overflow-x: hidden;
+	min-height: 100%;
+	height: 100%;
+	margin: 0;
+}
+.newsBufferL {
+	position: relative;
+	height: 33px;
+	width: 100000px;
+	background-color: black;
+	border-right: 4px solid #888888;
+	z-index: 100000000;
+	padding: 0 0 0 0;
+}
+
+.newsBufferR {
+	position: relative;
+	height: 33px;
+	width: 100000px;
+	background-color: black;
+	border-left: 4px solid #888888;
+	z-index: 100000000;
+	padding: 0 0 0 0;
+}
+table, tr, .table {
+    display: flex;
+    justify-content: center;
+}
+#scorecalc{
+    height: 70px;
+    width: 350px;
+}
+
+table {
+	flex-flow: column wrap;
+}
+
+body
+{
+  background-color: rgb(17, 0, 29);
+}
+.tabbtn {
+    height: 40px;
+    width: 100px;
+    font-size: 1.1em;
+    border: 2px solid white;
+    font-weight: bold;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.subtabbtn {
+    height: 25px;
+    width: 70px;
+    font-size: 0.6em;
+    border: 1px solid white;
+    font-weight: bold;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+.thoughtfont {
+  color: #31aeb0;
+    text-shadow: 0.166667em 0.166667em 0.3333333em rgb(47, 115, 171), 0.3333333em 0.3333333em 0.66666667em rgb(62, 5, 85);
+    font-size: 1.6em;
+}
+.thoughtfontsml {
+  color: #31aeb0;
+    text-shadow: 0.166667em 0.166667em 0.3333333em rgb(47, 115, 171), 0.3333333em 0.3333333em 0.66666667em rgb(62, 5, 85);
+    font-size: 1.6em;
+}
+.pthoughtfont {
+  color: #6e64c4;
+    text-shadow: 0.166667em 0.166667em 0.3333333em rgb(78, 0, 223), 0.3333333em 0.3333333em 0.66666667em rgb(124, 0, 172);
+    font-size: 1.6em;
+}
+.desc {
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    text-shadow: 0.166667em 0.166667em 0.3333333em rgb(133, 133, 133), 0.3333333em 0.3333333em 0.66666667em rgb(255, 255, 255);
+}
+.selected {
+  border-bottom: 4px solid #FFFFFF;
+}
+.current{
+    transform: scale(110%);
+}
+.optionSelection {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    width: 75px;
+    height: 75px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+.optionSelection:hover {
+    color: rgb(255, 255, 255);
+    background-color: #454545;
+    filter: brightness(120%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.optionSelection:active {
+    color: rgb(255, 255, 255);
+    background-color: #656565;
+    filter: brightness(150%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.thoughtUpg.unlocked {
+    color: black;
+    background-color: rgb(254,173,205);
+    border: 3px solid rgb(237,218,222);
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px rgb(254,173,205);
+    text-shadow: 0px 4px 0px rgb(237,218,222);
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.nothing.unlocked {
+    color: white;
+    background-color: #494949;
+    border: 3px solid #818181;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-radius: 4%;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: not-allowed;
+}
+.pthoughtUpg.unlocked {
+    color: white;
+    background-color: #00b7ff;
+    border: 3px solid #009cda;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #009cda;
+    text-shadow: 0px 4px 0px #009cda;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.barrier {
+    color: white;
+    background: linear-gradient(45deg, #000 25%, #222 0, #222 50%, #000 0, #000 75%, #222 0);
+    border: 3px solid #FFFFFF;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #FFFFFF;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.ethoughtUpg.locked {
+    color: white;
+    background-color: #000000;
+    border: 3px solid #9d0000;
+    width: 130px;
+    height: 130px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #500000;
+    text-shadow: 0px 4px 4px #ffffff;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+button:hover{
+    filter: brightness(120%);
+    transform: scale(1.05)
+}
+button:active{
+    filter: brightness(140%);
+    transform: scale(1.1)
+}
+.ethoughtUpg.unlocked {
+    color: white;
+    background-color: #000000;
+    border: 3px solid #00a6ff;
+    width: 130px;
+    height: 130px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #005a7d;
+    text-shadow: 0px 4px 4px #ffffff;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.ethoughtUpg.completed {
+    color: white;
+    background: linear-gradient(
+			#685644 0%,
+			#544731 10%,
+			#5e4834 25%,
+			#5d4a1f 62.5%,
+			#5d4a1f 100%
+    );
+    border: 2px solid #8A6E2F;
+    width: 130px;
+    height: 130px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #8A6E2F;
+    text-shadow: 0px 4px 4px #ffffff;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.ethoughtUpg.silver {
+    color: white;
+    background: radial-gradient(
+			ellipse farthest-corner at right bottom,
+			#fedb37 0%,
+			#fdb931 8%,
+			#9f7928 30%,
+			#8a6e2f 40%,
+			transparent 80%
+		),
+		radial-gradient(
+			ellipse farthest-corner at left top,
+			#ffffff 0%,
+			#ffffac 8%,
+			#d1b464 25%,
+			#5d4a1f 62.5%,
+			#5d4a1f 100%
+		);
+    filter: grayscale(100%);
+    border: 2px solid #cacaca;
+    width: 130px;
+    height: 130px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #cacaca;
+    text-shadow: 0px 4px 4px #ffffff;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.ethoughtUpg.gold {
+    color: white;
+    background: radial-gradient(
+			ellipse farthest-corner at left bottom,
+			#fedb37 0%,
+			#fdb931 8%,
+			#9f7928 30%,
+			#8a6e2f 40%,
+			transparent 80%
+		),
+		radial-gradient(
+			ellipse farthest-corner at right top,
+			#ffffff 0%,
+			#ffffac 8%,
+			#d1b464 25%,
+			#5d4a1f 62.5%,
+			#5d4a1f 100%
+		);
+	border-color: #f7e0a1;
+    width: 130px;
+    height: 130px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #f7e0a1;
+    text-shadow: 0px 4px 4px #ffffff;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.ethoughtUpg.platinum {
+    color: white;
+    background: radial-gradient(
+			circle farthest-corner at left top,
+			#38fff8 0%,
+			#00a6ff 8%,
+			#25769c 30%,
+			#2d226e 40%,
+			transparent 80%
+		),
+		radial-gradient(
+			circle farthest-corner at right bottom,
+			#ffffff 0%,
+			#affaf9 8%,
+			#5dabc7 25%,
+			#171d40 62.5%,
+			#171d40 100%
+		);
+	border-color: #9dd2f2;
+	color: white;
+	filter: saturate(125%);
+    width: 130px;
+    height: 130px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #affaf9;
+    text-shadow: 0px 4px 4px #ffffff;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+}
+.options {
+    color: white;
+    background-color: black;
+    border: 2px solid #ffffff;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.options:hover {
+    background-color: #acacac;
+    filter: brightness(120%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.options:active {
+    background-color: #717171;
+    transition-duration: 0.25s;
+    filter: brightness(150%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.changelog {
+    color: white;
+    background-color: black;
+    border: 2px solid #ffffff;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.changelog:hover {
+    background-color: #acacac;
+    filter: brightness(120%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.changelog:active {
+    background-color: #717171;
+    transition-duration: 0.25s;
+    filter: brightness(150%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.setting {
+    color: white;
+    background-color: black;
+    border: 2px solid #ffffff;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.setting:hover {
+    background-color: #acacac;
+    filter: brightness(120%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.setting:active {
+    background-color: #717171;
+    transition-duration: 0.25s;
+    filter: brightness(150%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.pack01 {
+    color: white;
+    background-color: black;
+    border: 2px solid dodgerblue;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.pack01:hover {
+    background-color: dodgerblue;
+    filter: brightness(120%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.pack01:active {
+    background-color: dodgerblue;
+    transition-duration: 0.25s;
+    filter: brightness(150%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.pack02 {
+    color: white;
+    background-color: black;
+    border: 2px solid rgb(99, 99, 99);
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.pack02:hover {
+    filter: brightness(120%);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.pack02:active {
+    transition-duration: 0.25s;
+    filter: brightness(150%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+[tooltip] {
+	position: relative;
+	z-index: 999999 !important;
+}
+
+[tooltip]:before,
+[tooltip]:after {
+	visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	pointer-events: none;
+	white-space: pre-wrap;
+}
+
+[tooltip]:before {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-bottom: 5px;
+	margin-left: -80px;
+	padding: 7px;
+	width: 160px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: black;
+	color: white;
+	content: attr(tooltip);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+	white-space: pre-wrap;
+}
+
+[tooltip]:after {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	width: 0;
+	border-top: 5px solid black;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	content: " ";
+	font-size: 0;
+	line-height: 0;
+	white-space: pre-wrap;
+}
+
+[tooltip]:hover:before,
+[tooltip]:hover:after {
+	animation: tooltip 0.25s linear 1;
+	animation-fill-mode: forwards;  
+	white-space: pre-wrap;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v31/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WRL2l2eY.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v31/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WRP2l2eY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url(https://fonts.gstatic.com/s/inconsolata/v31/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32lw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+    </style>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.12/vue.min.js"></script>
+    <script src="break_eternity.js"></script>
+    <script src="maingame.js"></script>
+    <script src="player.js"></script>
+    <script src="gameloop.js"></script>
+    <script src="thought.js"></script>
+    <script src="v.js"></script>
+    <script src="changelog.js"></script>
+    <script src="news.js"></script>
+    <script src="temp.js"></script>
+</head>
+<body onload="loadGame()">
+    <div id="app">
+      <div class = "desc">Overall Score:  <b class="thoughtfont">{{formatWhole(tmp.totalPoints)}}</b></div><br>
+      <span class = "desc" v-if="tab.normal=='Game'"><b class="thoughtfont" style="color: rgb(254,173,205);text-shadow: rgb(234, 126, 169) 0.166667em 0.166667em 0.3333333em;">{{formatWhole(calcWeight())}}</b> kilograms of weight</span><br>
+      <div v-if="tab.normal!='Main'&&tab.normal!='Game'&&tab.normal!='Result'"><table>
+        <tr>
+            <td v-for="(tab, name) in tabs.normal"><button v-if="tabs.normal[name]()&&name!='Main'&&name!='Game'&&name!='Result'" v-on:click="showTab(name,'normal')" v-bind:class="{[name.toLowerCase()]: true, tabbtn: true, selected: tab.normal==this.name}">{{name}}</button></td>
+        </tr>
+    </table></div><br>
+    <div v-if="tab.normal=='Options'">
+        <div v-if="tab.options=='Setting'"><br>
+      <button v-bind:class="{optionSelection:true}" onclick="importSave()">Import</button>
+      <button v-bind:class="{optionSelection:true}" onclick="exportSave()">Export</button>
+      <button v-bind:class="{optionSelection:true}" onclick="hardReset()" style="background-color: #FF0000;">Reset</button><br><br>
+    </div>
+    </div>
+    
+        <div v-if="tab.normal=='Main'"><br>
+            <span class="desc" style="color: rgb(254,173,205);font-size: 50px;">Fallen_</span><span class="desc" style="color: rgb(255, 95, 159);font-size: 50px;">Cat's </span><span class="desc" style="color: white;font-size: 50px;">Lose Weight Story</span><br>
+            <span class="desc" style="color: white;font-size: 30px;left: 300px;position: relative;">[Alpha]</span><br>
+            <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="">3kg</button><br>
+            <button v-bind:class="{pthoughtUpg:true, unlocked:true}" onclick="">-2kg</button><br><br>
+            <span class="desc" style="color: white;font-size: 20px;">The real Fallen_Cat: Height[173.8cm] Weight[46.5kg]</span><br><br><br><br><br><br><br>
+            <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="showTab('Pack01','normal')" style="width: 360px;">Start Game!!</button><br><br><br>
+        </div>
+        <div v-if="tab.normal=='Pack01'">
+            <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="" style="background-color: dodgerblue; width: 600px; height: 150px; text-shadow: none;color: white; box-shadow: 0 4px 6px dodgerblue; border-color: skyblue;">Level Pack 01 - First Step in a New World<br><br>New Feature: Fat blocks && Exercise Blocks<br><br>Difficulty: Easy *</button>
+            <table>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(11)&&!player.levelCompleted.includes(11),locked:!GetLevelUnl(11),completed:GetLevelMedal(11)=='copper',silver:GetLevelMedal(11)=='silver',gold:GetLevelMedal(11)=='gold',platinum:GetLevelMedal(11)=='platinum'}" onclick="EnterLevel(11)">Level 1-1<br>{{NaNCheck(player.best[11])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(12)&&!player.levelCompleted.includes(12),locked:!GetLevelUnl(12),completed:GetLevelMedal(12)=='copper',silver:GetLevelMedal(12)=='silver',gold:GetLevelMedal(12)=='gold',platinum:GetLevelMedal(12)=='platinum'}" onclick="EnterLevel(12)">Level 1-2<br>{{NaNCheck(player.best[12])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(13)&&!player.levelCompleted.includes(13),locked:!GetLevelUnl(13),completed:GetLevelMedal(13)=='copper',silver:GetLevelMedal(13)=='silver',gold:GetLevelMedal(13)=='gold',platinum:GetLevelMedal(13)=='platinum'}" onclick="EnterLevel(13)">Level 1-3<br>{{NaNCheck(player.best[13])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(14)&&!player.levelCompleted.includes(14),locked:!GetLevelUnl(14),completed:GetLevelMedal(14)=='copper',silver:GetLevelMedal(14)=='silver',gold:GetLevelMedal(14)=='gold',platinum:GetLevelMedal(14)=='platinum'}" onclick="EnterLevel(14)">Level 1-4<br>{{NaNCheck(player.best[14])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(15)&&!player.levelCompleted.includes(15),locked:!GetLevelUnl(15),completed:GetLevelMedal(15)=='copper',silver:GetLevelMedal(15)=='silver',gold:GetLevelMedal(15)=='gold',platinum:GetLevelMedal(15)=='platinum'}" onclick="EnterLevel(15)">Level 1-5<br>{{NaNCheck(player.best[15])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(16)&&!player.levelCompleted.includes(16),locked:!GetLevelUnl(16),completed:GetLevelMedal(16)=='copper',silver:GetLevelMedal(16)=='silver',gold:GetLevelMedal(16)=='gold',platinum:GetLevelMedal(16)=='platinum'}" onclick="EnterLevel(16)">Level 1-6<br>{{NaNCheck(player.best[16])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(17)&&!player.levelCompleted.includes(17),locked:!GetLevelUnl(17),completed:GetLevelMedal(17)=='copper',silver:GetLevelMedal(17)=='silver',gold:GetLevelMedal(17)=='gold',platinum:GetLevelMedal(17)=='platinum'}" onclick="EnterLevel(17)">Level 1-7<br>{{NaNCheck(player.best[17])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(18)&&!player.levelCompleted.includes(18),locked:!GetLevelUnl(18),completed:GetLevelMedal(18)=='copper',silver:GetLevelMedal(18)=='silver',gold:GetLevelMedal(18)=='gold',platinum:GetLevelMedal(18)=='platinum'}" onclick="EnterLevel(18)">Level 1-8<br>{{NaNCheck(player.best[18])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(19)&&!player.levelCompleted.includes(19),locked:!GetLevelUnl(19),completed:GetLevelMedal(19)=='copper',silver:GetLevelMedal(19)=='silver',gold:GetLevelMedal(19)=='gold',platinum:GetLevelMedal(19)=='platinum'}" onclick="EnterLevel(19)">Level 1-9<br>{{NaNCheck(player.best[19])}}</button></td>
+                </tr>
+            </table><br>
+        <div v-if="!tabs.normal['Pack02']()">Get 5 total gold medals to unlock next pack.</div>
+        </div>
+        <div v-if="tab.normal=='Pack02'">
+            <button v-bind:class="{barrier:true, unlocked:true}" onclick="" style="width: 600px; height: 150px;">Level Pack 02 - Swept Up in a Heartbeat<br><br>New Feature: Barrier blocks<br><br>Difficulty: Easy *</button>
+            <table>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(21)&&!player.levelCompleted.includes(21),locked:!GetLevelUnl(21),completed:GetLevelMedal(21)=='copper',silver:GetLevelMedal(21)=='silver',gold:GetLevelMedal(21)=='gold',platinum:GetLevelMedal(21)=='platinum'}" onclick="EnterLevel(21)">Level 2-1<br>{{NaNCheck(player.best[21])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(22)&&!player.levelCompleted.includes(22),locked:!GetLevelUnl(22),completed:GetLevelMedal(22)=='copper',silver:GetLevelMedal(22)=='silver',gold:GetLevelMedal(22)=='gold',platinum:GetLevelMedal(22)=='platinum'}" onclick="EnterLevel(22)">Level 2-2<br>{{NaNCheck(player.best[22])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(23)&&!player.levelCompleted.includes(23),locked:!GetLevelUnl(23),completed:GetLevelMedal(23)=='copper',silver:GetLevelMedal(23)=='silver',gold:GetLevelMedal(23)=='gold',platinum:GetLevelMedal(23)=='platinum'}" onclick="EnterLevel(23)">Level 2-3<br>{{NaNCheck(player.best[23])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(24)&&!player.levelCompleted.includes(24),locked:!GetLevelUnl(24),completed:GetLevelMedal(24)=='copper',silver:GetLevelMedal(24)=='silver',gold:GetLevelMedal(24)=='gold',platinum:GetLevelMedal(24)=='platinum'}" onclick="EnterLevel(24)">Level 2-4<br>{{NaNCheck(player.best[24])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(25)&&!player.levelCompleted.includes(25),locked:!GetLevelUnl(25),completed:GetLevelMedal(25)=='copper',silver:GetLevelMedal(25)=='silver',gold:GetLevelMedal(25)=='gold',platinum:GetLevelMedal(25)=='platinum'}" onclick="EnterLevel(25)">Level 2-5<br>{{NaNCheck(player.best[25])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(26)&&!player.levelCompleted.includes(26),locked:!GetLevelUnl(26),completed:GetLevelMedal(26)=='copper',silver:GetLevelMedal(26)=='silver',gold:GetLevelMedal(26)=='gold',platinum:GetLevelMedal(26)=='platinum'}" onclick="EnterLevel(26)">Level 2-6<br>{{NaNCheck(player.best[26])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(27)&&!player.levelCompleted.includes(27),locked:!GetLevelUnl(27),completed:GetLevelMedal(27)=='copper',silver:GetLevelMedal(27)=='silver',gold:GetLevelMedal(27)=='gold',platinum:GetLevelMedal(27)=='platinum'}" onclick="EnterLevel(27)">Level 2-7<br>{{NaNCheck(player.best[27])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(28)&&!player.levelCompleted.includes(28),locked:!GetLevelUnl(28),completed:GetLevelMedal(28)=='copper',silver:GetLevelMedal(28)=='silver',gold:GetLevelMedal(28)=='gold',platinum:GetLevelMedal(28)=='platinum'}" onclick="EnterLevel(28)">Level 2-8<br>{{NaNCheck(player.best[28])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(29)&&!player.levelCompleted.includes(29),locked:!GetLevelUnl(29),completed:GetLevelMedal(29)=='copper',silver:GetLevelMedal(29)=='silver',gold:GetLevelMedal(29)=='gold',platinum:GetLevelMedal(29)=='platinum'}" onclick="EnterLevel(29)">Level 2-9<br>{{NaNCheck(player.best[29])}}</button></td>
+                </tr>
+            </table>
+        </div>
+        <div v-if="tab.normal=='Game'">
+            <table>
+            <tr v-for="(v,index) in LEVEL_DATA[player.activeLevel].map">
+                <td v-for="(v2,index2) in LEVEL_DATA[player.activeLevel].map[index]"><button v-bind:class="{thoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])>0,pthoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])<0,nothing:player.grid[index*10+index2+1] == 'nothing',barrier:player.grid[index*10+index2+1] == 'barrier',unlocked:true,current:player.current%10==index2+1&&Math.floor(player.current/10)==index}" v-on:click="player.current = index*10+index2+1,player.clicks+=1">{{player.grid[index*10+index2+1]!='nothing'?player.grid[index*10+index2+1]:''}}{{typeof(player.grid[index*10+index2+1]) == 'number'?'kg':''}}</button></td><br>
+            </tr>
+            </table><br>
+            <details v-if="player.activeLevel==11" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-1</summary>
+                <ul>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #aa00ff; text-decoration: underline;">Fat Block</span><br><span style="color: #000000;">The color of this type of block is pink. It stands for the fat inside Fallen_Cat's body. If the table of the stage have not any <span style="color: #aa00ff; text-underline-position: above;">fat block</span>, You will beat the stage.</span></li>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #008cff; text-decoration: underline;">Exercise Block</span><br><span style="color: #000000;">The color of this type of block is blue. It stands for the lose weight plans of Fallen_Cat. You can merge <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> with <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> to Eliminate them and help Fallen_Cat to lose weight.</span></li>
+                    <li><span style="background-color:#00ff44 ;color:black ; padding:3px; margin:5px">How to play</span><span style="color: #000000;">use your mouse to select blocks and use <span style="color: #ff0000;">WASD (If you are a mobile player, please use the keyboard in the left-up corner)</span> on the keyboard to move blocks in the grid.<span style="color: #ff0000; text-decoration: underline;"> Your goal is eliminate all fat blocks in the table. If you have no exercise block but fat blocks, you'll fail the stage.</span></span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==12" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-2</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can merge 2 <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> together and their values will be stacked.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==14" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-4</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">If you don't take exercise or eat too much during a day, your body will get fatter.<br>The value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> and <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> <span style="color: #ff0000;">WILL BE INCREASED BY 1</span> if you move them to a empty slot.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==15" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-5</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Try to use less clicks and less moves to finish the stage. Then your score will get higher.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==16" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-6</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You cannot merge <span style="color: #aa00ff; text-underline-position: above;">2 fat blocks</span> together.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==19" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-9</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Try to form a long path of blocks and combine blocks along the path at once. This will help reduce the number of clicks.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==21" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 2-1</summary>
+                <ul>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #000000; text-decoration: underline;">Barrier Block</span><br><span style="color: #000000;">A kind of block which cannot be moved or merged with any other blocks. It's useless.</span></li>
+                </ul>
+            </details>
+        </div>
+        <div v-if="tab.normal=='Result'">
+            <div v-if="tmp.state=='failed'">
+                <span class="desc" style="color: rgb(255, 0, 0);font-size: 100px; text-shadow: 0.166667em 0.166667em 0.3333333em rgb(141, 0, 0);">Failure</span><br><br>
+                <span class="desc" style="color: white;font-size: 30px;">Stage {{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}</span><br>
+                <span class="desc" style="color: white;font-size: 20px;">You have failed the stage, because you used all exercise blocks but the weight of Fallen_Cat is still very high.</span><br>\
+                <span class="desc">Fallen_Cat's weight: <b class="thoughtfont" style="color: rgb(255, 0, 0);text-shadow: rgb(139, 0, 0) 0.166667em 0.166667em 0.3333333em;">{{formatWhole(calcWeight())+"kg"}}</b><b class="thoughtfont" style="color: rgb(254,173,205);text-shadow: rgb(234, 126, 169) 0.166667em 0.166667em 0.3333333em;"> / 45kg</b></span><br>
+                <span class="desc" style="color: white;font-size: 20px;">How fat the little cat girl is :(</span><br><br><br><br><br><br>
+                <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="LeaveStage()" style="width: 360px;">Back to level selection</button>
+            </div>
+            <div v-if="tmp.state=='success'">
+                <span class="desc" style="color: rgb(0, 255, 166);font-size: 100px; text-shadow: 0.166667em 0.166667em 0.3333333em rgb(0, 124, 70);">Success </span><span><button style="border-radius: 50%; bottom: 40px;position: relative;" v-bind:class="{ethoughtUpg:true,unlocked:true,completed:GetCurrentMedal()=='copper',silver:GetCurrentMedal()=='silver',gold:GetCurrentMedal()=='gold',platinum:GetCurrentMedal()=='platinum'}" onclick="">{{GetCurrentMedal()}}<br>medal</button></span><br><br>
+                <span class="desc" style="color: white;font-size: 30px;">Stage {{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}</span><br>
+                <span class="desc" style="color: white;font-size: 20px;">You have beat the stage. Fallen_Cat thank you so much for your help. She became a thin girl again!</span><br>
+                <span class="desc">Fallen_Cat's weight: <b class="thoughtfont" style="color: rgb(0, 255, 166);text-shadow: rgb(0, 124, 70) 0.166667em 0.166667em 0.3333333em;">{{formatWhole(calcWeight())+"kg"}}</b><b class="thoughtfont" style="color: rgb(254,173,205);text-shadow: rgb(234, 126, 169) 0.166667em 0.166667em 0.3333333em;"> / 45kg</b></span><br><br>
+                <table>
+                    <tr>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(255, 225, 0);font-size: 30px;">+ Unused switches x30</td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(255, 225, 0);font-size: 30px;">{{formatWhole(player.clicks)+" / "+formatWhole(LEVEL_DATA[player.activeLevel].time-3)}}</td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(0, 221, 225);font-size: 30px;">{{"+"+formatWhole(tmp.clickScore)+"pts"}}</td>
+                    </tr>
+                    <tr>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(89, 255, 0);font-size: 30px;">+ Unused steps x80</td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(89, 255, 0);font-size: 30px;">{{formatWhole(player.steps)+" / "+formatWhole(LEVEL_DATA[player.activeLevel].step-5)}}</td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(0, 221, 225);font-size: 30px;">{{"+"+formatWhole(tmp.stepScore)+"pts"}}</td>
+                    </tr>
+                    <tr>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(254,173,205);font-size: 30px; border-bottom: white 3px solid;">+ Overflew weight x500</td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(254,173,205);font-size: 30px; border-bottom: white 3px solid;">{{formatWhole(calcWeight())+"kg"}}</td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(0, 221, 225);font-size: 30px; border-bottom: white 3px solid;">{{"+"+formatWhole(tmp.weightScore)+"pts"}}</td>
+                    </tr>
+                    <tr>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(0, 221, 225);font-size: 30px;"><b style="bottom: -30px;position: relative;color: rgb(0, 221, 225);">= Total score</b></td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(0, 221, 225);font-size: 30px;"></td>
+                        <td  id="scorecalc" class="thoughtfontsml" style="color: rgb(0, 221, 225);font-size: 30px;"><b style="bottom: -30px;position: relative;color: rgb(0, 221, 225);">{{formatWhole(tmp.totalScore)+"pts"}}</b></td>
+                    </tr>
+                </table><br>
+                <div class="smolOuterBar slow" style="margin-right: 10px;position: relative;left: 10%;">
+                    <div class="smolInnerBar" v-bind:style="{width: (format(tmp.totalScore.div(LEVEL_DATA[player.activeLevel].medal[2]).mul(100).min(100))+'%') ,'background-color':tmp.medalColor,position:'relative'}">{{tmp.medalText}}</div>
+                </div><br>
+                <button v-bind:class="{pthoughtUpg:true, unlocked:true}" onclick="CompleteStage()" style="width: 360px;">Complete the stage</button>
+            </div>
+        </div>
+<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story<br>Beta v1.1</b></div>
+<div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart</button></div>
+<div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="LeaveStage()">Exit</button></div>
+<div style="position: absolute; left: 105px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlRight(),player.steps+=1">→</button></div>
+<div style="position: absolute; left: 55px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlDown(),player.steps+=1">↓</button></div>
+<div style="position: absolute; left: 55px; top: 5px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlUp(),player.steps+=1">↑</button></div>
+<div style="position: absolute; left: 5px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlLeft(),player.steps+=1">←</button></div>
+    </div>
+</body>
+</html>
