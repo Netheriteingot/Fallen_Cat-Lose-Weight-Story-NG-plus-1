@@ -96,11 +96,10 @@ function hardReset() {
 	window.location.reload();
 }
 document.onkeydown = function(event){
-	if(event.keyCode == 87) controlUp()
-	if(event.keyCode == 83) controlDown()
-	if(event.keyCode == 65) controlLeft()
-	if(event.keyCode == 68) controlRight()
-	player.steps+=1
+	if(event.keyCode == 87) controlUp(),player.steps+=1
+	if(event.keyCode == 83) controlDown(),player.steps+=1
+	if(event.keyCode == 65) controlLeft(),player.steps+=1
+	if(event.keyCode == 68) controlRight()player.steps+=1
 }
 function controlUp()
 {
