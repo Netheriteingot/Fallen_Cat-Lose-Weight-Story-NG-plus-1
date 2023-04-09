@@ -12,6 +12,7 @@ var list = []
 const TOTAL_LEVEL = 29
 const LEVEL_DATA = {
 	11:{
+		name:"Fat girl",
 		size:3,
 		time:7,
 		step:7,
@@ -23,6 +24,7 @@ const LEVEL_DATA = {
 		}
 	},
 	12:{
+		name:"Short Chain",
 		size:3,
 		time:7,
 		step:7,
@@ -34,6 +36,7 @@ const LEVEL_DATA = {
 		}
 	},
 	13:{
+		name:"On and On and On",
 		size:3,
 		time:7,
 		step:8,
@@ -45,6 +48,7 @@ const LEVEL_DATA = {
 		}
 	},
 	14:{
+		name:"Lazy Girl",
 		size:3,
 		time:8,
 		step:7,
@@ -56,6 +60,7 @@ const LEVEL_DATA = {
 		}
 	},
 	15:{
+		name:"Long Chain",
 		size:4,
 		time:7,
         step:12,
@@ -68,6 +73,7 @@ const LEVEL_DATA = {
 		}
 	},
 	16:{
+		name:"Double Chain",
 		size:4,
 		time:8,
 		step:12,
@@ -80,6 +86,7 @@ const LEVEL_DATA = {
 		}
 	},
 	17:{
+		name:"CH2=CH2",
 		size:5,
 		time:10,
 		step:15,
@@ -93,6 +100,7 @@ const LEVEL_DATA = {
 		}
 	},
 	18:{
+		name:"Space-Filling Model",
 		size:5,
 		time:8,
 		step:23,
@@ -106,6 +114,7 @@ const LEVEL_DATA = {
 		}
 	},
 	19:{
+		name:"Rotunda",
 		size:5,
 		time:14,
 		step:24,
@@ -119,6 +128,7 @@ const LEVEL_DATA = {
 		}
 	},
 	21:{
+		name:"Break Through The Barrier",
 		size:3,
 		time:7,
 		step:9,
@@ -130,6 +140,7 @@ const LEVEL_DATA = {
 		}
 	},
 	22:{
+		name:"Double Barrier",
 		size:3,
 		time:7,
 		step:11,
@@ -141,6 +152,7 @@ const LEVEL_DATA = {
 		}
 	},
 	23:{
+		name:"Cloud Girl",
 		size:4,
 		time:10,
 		step:14,
@@ -153,6 +165,7 @@ const LEVEL_DATA = {
 		}
 	},
 	24:{
+		name:"Hide by your side",
 		size:5,
 		time:13,
 		step:20,
@@ -166,6 +179,7 @@ const LEVEL_DATA = {
 		}
 	},
 	25:{
+		name:"Tiptoe around and don't get circulated",
 		size:5,
 		time:13,
 		step:19,
@@ -179,6 +193,7 @@ const LEVEL_DATA = {
 		}
 	},
 	26:{
+		name:"Leave your worries behind",
 		size:6,
 		time:13,
 		step:25,
@@ -193,6 +208,7 @@ const LEVEL_DATA = {
 		}
 	},
 	27:{
+		name:"Throw away your sorrows",
 		size:7,
 		time:15,
 		step:30,
@@ -208,6 +224,7 @@ const LEVEL_DATA = {
 		}
 	},
 	28:{
+		name:"Let me ring the bell to put you to sleep",
 		size:6,
 		time:14,
 		step:26,
@@ -222,6 +239,7 @@ const LEVEL_DATA = {
 		}
 	},
 	29:{
+		name:"Another Path",
 		size:6,
 		time:14,
 		step:30,
@@ -234,6 +252,127 @@ const LEVEL_DATA = {
 			5:[4,"barrier",3,"barrier","nothing","nothing"],
 			6:["barrier",3,-1,2,2,-1],
 		}
+	},
+	31:{
+		name:"First Multiplication",
+		size:3,
+		time:5,
+		step:7,
+		medal:[850,1100,1300],
+		map:{
+			1:["nothing",4,"nothing"],
+			2:["nothing","x2","nothing"],
+			3:["nothing",-2,"nothing"],
+		}
+	},
+	32:{
+		name:"Quantum Exercise",
+		size:4,
+		time:10,
+		step:14,
+		medal:[700,1000,1440],
+		map:{
+			1:["nothing","nothing","nothing",-3],
+			2:[-2,"x2","nothing","nothing"],
+			3:[4,"nothing","x2","nothing"],
+			4:[-1,9,-2,"nothing"],
+		}
+	},
+	33:{
+		name:"Yin Yang",
+		size:3,
+		time:7,
+		step:14,
+		medal:[700,1000,1300],
+		map:{
+			1:[15,"nothing",-4],
+			2:["x3","nothing","x2"],
+			3:[-3,"nothing",10],
+		}
+	},
+	34:{
+		name:"DataError",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1800,2500,3130],
+		map:{
+		    1:[3,"nothing",2,"barrier","nothing"],
+			2:["nothing",3,-1,"x0",-6],
+			3:["nothing",-2,"barrier",-3,"nothing"],
+			4:[-5,"nothing",-1,3,"nothing"],
+			5:["x0","barrier",7,"nothing",3],
+		},
+	},
+	35:{
+		name:"Restrictions",
+		size:5,
+		time:17,
+		step:25,
+		medal:[800,1100,1580],
+		map:{
+		    1:["barrier",4,-1,-2,"barrier"],
+			2:[-2,"barrier",1,"barrier",4],
+			3:[-1,1,"x2",1,-1],
+			4:[1,"barrier",1,"barrier",2],
+			5:["barrier","nothing",-2,"x0","barrier"],
+		},
+	},
+	36:{
+		name:"Math Problem",
+		size:4,
+		time:14,
+		step:30,
+		medal:[3000,6600,9600],
+		map:{
+			1:["x2",14,"x2",50],
+			2:[-1,"x0",-1,"x1"],
+			3:["x2",-1,"x2",40],
+			4:[-1,"x2",50,"x2"],
+		}
+	},
+	37:{
+		name:"Fallen_Cat's Scream",
+		size:5,
+		time:17,
+		step:32,
+		medal:[1200,1600,2000],
+		map:{
+		    1:[5,"nothing",13,"barrier","x2"],
+			2:["nothing","nothing",-5,-1,8],
+			3:[-3,"barrier","x0","nothing","nothing"],
+			4:["nothing","nothing","barrier","nothing",-3],
+			5:["x2","barrier",-2,"nothing",1],
+	        },
+		},
+	38:{
+		name:"The Guru",
+		size:6,
+		time:20,
+		step:40,
+		medal:[1500,3000,4500],
+		map:{
+		1:["nothing",-2,5,-3,"nothing",-2],
+		2:[-3,"nothing","x2","nothing",-3,"nothing"],
+		3:["nothing",5,"nothing",4,"barrier","nothing"],
+		4:["nothing","barrier",4,"nothing","nothing",14],
+		5:["nothing",-3,"nothing","x2","nothing",-2],
+		6:[-2,"nothing",-3,5,-3,"nothing"],
+		},
+	},
+	39:{
+		name:"Spasmodic",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[-1,"nothing","x2","nothing",-1],
+			2:["nothing",1,"nothing",5,"nothing"],
+			3:[-2,"nothing",-2,"nothing",-2],
+			4:["nothing",5,"nothing",1,"nothing"],
+			5:["nothing",1,"x2","nothing",-3],
+	    },
 	},
 }
 function GetLevelMedal(level)
@@ -325,7 +464,7 @@ function calcWeight()
 	{
 		for (var j=1; j<=LEVEL_DATA[player.activeLevel].size; j++)
 		{
-	        if(typeof(player.grid[i*10+j])=='number'&&NaNCheck(player.grid[i*10+j])>0) weight+=player.grid[i*10+j]
+	        if(typeof(player.grid[i*10+j])=='number'&&(NaNCheck(player.grid[i*10+j])>0)) weight+=player.grid[i*10+j]
 		}
 	}
 	if(weight>45)return weight
@@ -333,7 +472,7 @@ function calcWeight()
 	{
 		for (var j=1; j<=LEVEL_DATA[player.activeLevel].size; j++)
 		{
-	        if(typeof(player.grid[i*10+j])=='number'&&NaNCheck(player.grid[i*10+j])<0) weight-=player.grid[i*10+j]
+	        if(typeof(player.grid[i*10+j])=='number'&&(NaNCheck(player.grid[i*10+j])<0)) weight+=player.grid[i*10+j]
 		}
 	}
 	return weight
