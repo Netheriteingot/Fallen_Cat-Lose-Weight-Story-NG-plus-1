@@ -81,7 +81,7 @@ function exportSave() {
 	let data = btoa(JSON.stringify(player))
 	const a = document.createElement('a');
 	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + data);
-	a.setAttribute('download', "Solitary_Orbiting_Dream_"+new Date()+".txt");
+	a.setAttribute('download', "fclwd_"+new Date()+".txt");
 	a.setAttribute('id', 'downloadSave');
 
 	document.body.appendChild(a);
@@ -96,14 +96,15 @@ function hardReset() {
 	window.location.reload();
 }
 document.onkeydown = function(event){
-	if(event.keyCode == 87) controlUp(),player.steps+=1
-	if(event.keyCode == 83) controlDown(),player.steps+=1
-	if(event.keyCode == 65) controlLeft(),player.steps+=1
-	if(event.keyCode == 68) controlRight(),player.steps+=1
+	if(event.keyCode == 87) controlUp()
+	if(event.keyCode == 83) controlDown()
+	if(event.keyCode == 65) controlLeft()
+	if(event.keyCode == 68) controlRight()
+	
 }
 function controlUp()
 {
-	if(Math.floor(player.current/10)==1||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier') return
+	if(Math.floor(player.current/10)==1||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier'||player.grid[player.current][0]=='x') return
 	else if(player.grid[player.current-10]=='barrier') return
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])>0)
 	{
@@ -119,6 +120,12 @@ function controlUp()
 		   player.grid[player.current]='nothing'
 		}
 		if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current-10])>0) return
+		else if(player.grid[player.current-10][0]=='x')
+		{
+			if(player.grid[player.current-10][1]=='0') player.grid[player.current-10]='nothing'
+			else player.grid[player.current-10] = Number(player.grid[player.current-10][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])<0)
 	{
@@ -138,12 +145,18 @@ function controlUp()
 			else player.grid[player.current-10]='nothing'
 			player.grid[player.current]='nothing'
 		}
+		else if(player.grid[player.current-10][0]=='x')
+		{
+			if(player.grid[player.current-10][1]=='0') player.grid[player.current-10]='nothing'
+			else player.grid[player.current-10] = Number(player.grid[player.current-10][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
-	if(player.current>10) player.current -= 10
+	if(player.current>10&&tmp.state=='running') player.current -= 10,player.steps+=1
 }
 function controlDown()
 {
-	if(Math.floor(player.current/10)==LEVEL_DATA[player.activeLevel].size||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier') return
+	if(Math.floor(player.current/10)==LEVEL_DATA[player.activeLevel].size||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier'||player.grid[player.current][0]=='x') return
 	else if(player.grid[player.current+10]=='barrier') return
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])>0)
 	{
@@ -159,6 +172,12 @@ function controlDown()
 		   player.grid[player.current]='nothing'
 		}
 		else if(typeof(player.grid[player.current+10])=='number'&&NaNCheck(player.grid[player.current+10])>0) return
+		else if(player.grid[player.current+10][0]=='x')
+		{
+			if(player.grid[player.current+10][1]=='0') player.grid[player.current+10]='nothing'
+			else player.grid[player.current+10] = Number(player.grid[player.current+10][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])<0)
 	{
@@ -177,13 +196,19 @@ function controlDown()
 			if(!(player.grid[player.current]==((player.grid[player.current+10])*(-1))))player.grid[player.current+10]=player.grid[player.current]+player.grid[player.current+10]
 			else player.grid[player.current+10]='nothing'
 			player.grid[player.current]='nothing'
-		 }
+		}
+		else if(player.grid[player.current+10][0]=='x')
+		{
+			if(player.grid[player.current+10][1]=='0') player.grid[player.current+10]='nothing'
+			else player.grid[player.current+10] = Number(player.grid[player.current+10][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
-	if(player.current<LEVEL_DATA[player.activeLevel].size*10) player.current += 10
+	if(player.current<LEVEL_DATA[player.activeLevel].size*10&&tmp.state=='running') player.current += 10,player.steps+=1
 }
 function controlLeft()
 {
-	if(player.current%10==1||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier') return
+	if(player.current%10==1||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier'||player.grid[player.current][0]=='x') return
 	else if(player.grid[player.current-1]=='barrier') return
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])>0)
 	{
@@ -199,6 +224,12 @@ function controlLeft()
 		   player.grid[player.current]='nothing'
 		}
 		if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current-1])>0) return
+		else if(player.grid[player.current-1][0]=='x')
+		{
+			if(player.grid[player.current-1][1]=='0') player.grid[player.current-1]='nothing'
+			else player.grid[player.current-1] = Number(player.grid[player.current-1][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])<0)
 	{
@@ -217,13 +248,19 @@ function controlLeft()
 			if(!(player.grid[player.current]==((player.grid[player.current-1])*(-1))))player.grid[player.current-1]=player.grid[player.current]+player.grid[player.current-1]
 			else player.grid[player.current-1]='nothing'
 			player.grid[player.current]='nothing'
-		 }
+		}
+		else if(player.grid[player.current-1][0]=='x')
+		{
+			if(player.grid[player.current-1][1]=='0') player.grid[player.current-1]='nothing'
+			else player.grid[player.current-1] = Number(player.grid[player.current-1][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
-	if(player.current%10>1) player.current -= 1
+	if(player.current%10>1&&tmp.state=='running') player.current -= 1,player.steps+=1
 }
 function controlRight()
 {
-	if(player.current%10==LEVEL_DATA[player.activeLevel].size||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier') return
+	if(player.current%10==LEVEL_DATA[player.activeLevel].size||player.grid[player.current]=='nothing'||player.grid[player.current]=='barrier'||player.grid[player.current][0]=='x') return
 	else if(player.grid[player.current+1]=='barrier') return
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])>0)
 	{
@@ -239,6 +276,12 @@ function controlRight()
 		   player.grid[player.current]='nothing'
 		}
 		else if(typeof(player.grid[player.current+1])=='number'&&NaNCheck(player.grid[player.current+1])>0) return
+		else if(player.grid[player.current+1][0]=='x')
+		{
+			if(player.grid[player.current+1][1]=='0') player.grid[player.current+1]='nothing'
+			else player.grid[player.current+1] = Number(player.grid[player.current+1][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
 	else if(typeof(player.grid[player.current])=='number'&&NaNCheck(player.grid[player.current])<0)
 	{
@@ -258,8 +301,14 @@ function controlRight()
 			else player.grid[player.current+1]='nothing'
 			player.grid[player.current]='nothing'
 		 }
+		else if(player.grid[player.current+1][0]=='x')
+		{
+			if(player.grid[player.current+1][1]=='0') player.grid[player.current+1]='nothing'
+			else player.grid[player.current+1] = Number(player.grid[player.current+1][1])*player.grid[player.current]
+			player.grid[player.current] = 'nothing'
+		}
 	}
-	if(player.current%10<LEVEL_DATA[player.activeLevel].size) player.current += 1
+	if(player.current%10<LEVEL_DATA[player.activeLevel].size&&tmp.state=='running') player.current += 1,player.steps+=1
 }
 function HaveExercise()
 {
@@ -268,6 +317,14 @@ function HaveExercise()
 		for (var j=1; j<=LEVEL_DATA[player.activeLevel].size; j++)
 		{
 	        if(typeof(player.grid[i*10+j])=='number'&&NaNCheck(player.grid[i*10+j])<0) return true
+	
+		}
+	}
+	for(var i=1; i<=LEVEL_DATA[player.activeLevel].size; i++)
+	{
+		for (var j=1; j<=LEVEL_DATA[player.activeLevel].size; j++)
+		{
+	        if(player.grid[i*10+j][0]=='x') return true
 		}
 	}
 	return false
