@@ -368,6 +368,83 @@ body
     padding: 10px 10px 10px 10px;
     cursor: pointer;
 }
+.mult {
+    color: black;
+    background:rgb(22, 234, 100);
+      background-image:repeating-linear-gradient(45deg,
+      hsla(0,0%,100%,.2),
+      hsla(0,0%,100%,.2) 15px,
+      transparent 0,
+      transparent 30px),
+      repeating-linear-gradient(-45deg,
+      hsla(0,0%,100%,.2),
+      hsla(0,0%,100%,.2) 15px,
+      transparent 0,
+      transparent 30px);
+      background-size: 1000% 1000%;
+      background-position: 0% 0%;
+      animation: climb 20s linear infinite;
+    border: 3px solid #078e00;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #078e00;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    
+}
+.delete {
+    color: black;
+    background:rgb(255, 47, 47);
+      background-image:repeating-linear-gradient(45deg,
+      hsla(0,0%,100%,.1),
+      hsla(0,0%,100%,.1) 15px,
+      transparent 0,
+      transparent 30px),
+      repeating-linear-gradient(-45deg,
+      hsla(0,0%,100%,.1),
+      hsla(0,0%,100%,.1) 15px,
+      transparent 0,
+      transparent 30px);
+      background-size: 1000% 1000%;
+      background-position: 0% 0%;
+    border: 3px solid #8e0000;
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    border-radius: 4%;
+    box-shadow: 0px 5px 3px #8e0000;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    animation: antiClimb 20s linear infinite;
+}
+@keyframes climb {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 0% 100%;
+	}
+	100% {
+		background-position: 0% 200%;
+	}
+}
+@keyframes antiClimb {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 0% -112%;
+	}
+	100% {
+		background-position: 0% -215%;
+	}
+}
 .ethoughtUpg.locked {
     color: white;
     background-color: #000000;
@@ -602,8 +679,28 @@ button:active{
 }
 .pack02 {
     color: white;
-    background-color: black;
-    border: 2px solid rgb(99, 99, 99);
+    background: linear-gradient(45deg, #000 25%, #222 0, #222 50%, #000 0, #000 75%, #222 0);
+    border: 2px solid white;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.pack03 {
+    color: white;
+    background:rgb(22, 234, 100);
+    border: 2px solid rgb(17, 171, 74);
+      background-image:repeating-linear-gradient(45deg,
+      hsla(0,0%,100%,.2),
+      hsla(0,0%,100%,.2) 15px,
+      transparent 0,
+      transparent 30px),
+      repeating-linear-gradient(-45deg,
+      hsla(0,0%,100%,.2),
+      hsla(0,0%,100%,.2) 15px,
+      transparent 0,
+      transparent 30px);
+      background-size: 1000% 1000%;
+      background-position: 0% 0%;
+      animation: climb 20s linear infinite;
     padding: 5px 5px 5px 5px;
     cursor: pointer;
 }
@@ -741,7 +838,7 @@ button:active{
             <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="showTab('Pack01','normal')" style="width: 360px;">Start Game!!</button><br><br><br>
         </div>
         <div v-if="tab.normal=='Pack01'">
-            <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="" style="background-color: dodgerblue; width: 600px; height: 150px; text-shadow: none;color: white; box-shadow: 0 4px 6px dodgerblue; border-color: skyblue;">Level Pack 01 - First Step in a New World<br><br>New Feature: Fat blocks && Exercise Blocks<br><br>Difficulty: Easy *</button>
+            <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="" style="background-color: dodgerblue; width: 600px; height: 150px; text-shadow: none;color: white; box-shadow: 0 4px 6px dodgerblue; border-color: skyblue;">Level Pack 01 - First Step in a New World<br><br>New Feature: Fat Blocks && Exercise Blocks<br><br>Difficulty: Easy *</button>
             <table>
                 <tr>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(11)&&!player.levelCompleted.includes(11),locked:!GetLevelUnl(11),completed:GetLevelMedal(11)=='copper',silver:GetLevelMedal(11)=='silver',gold:GetLevelMedal(11)=='gold',platinum:GetLevelMedal(11)=='platinum'}" onclick="EnterLevel(11)">Level 1-1<br>{{NaNCheck(player.best[11])}}</button></td>
@@ -762,7 +859,7 @@ button:active{
         <div v-if="!tabs.normal['Pack02']()">Get 5 total gold medals to unlock next pack.</div>
         </div>
         <div v-if="tab.normal=='Pack02'">
-            <button v-bind:class="{barrier:true, unlocked:true}" onclick="" style="width: 600px; height: 150px;">Level Pack 02 - Swept Up in a Heartbeat<br><br>New Feature: Barrier blocks<br><br>Difficulty: Easy *</button>
+            <button v-bind:class="{barrier:true, unlocked:true}" onclick="" style="width: 600px; height: 150px;">Level Pack 02 - Swept Up in a Heartbeat<br><br>New Feature: Barrier Blocks<br><br>Difficulty: Easy *</button>
             <table>
                 <tr>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(21)&&!player.levelCompleted.includes(21),locked:!GetLevelUnl(21),completed:GetLevelMedal(21)=='copper',silver:GetLevelMedal(21)=='silver',gold:GetLevelMedal(21)=='gold',platinum:GetLevelMedal(21)=='platinum'}" onclick="EnterLevel(21)">Level 2-1<br>{{NaNCheck(player.best[21])}}</button></td>
@@ -779,12 +876,33 @@ button:active{
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(28)&&!player.levelCompleted.includes(28),locked:!GetLevelUnl(28),completed:GetLevelMedal(28)=='copper',silver:GetLevelMedal(28)=='silver',gold:GetLevelMedal(28)=='gold',platinum:GetLevelMedal(28)=='platinum'}" onclick="EnterLevel(28)">Level 2-8<br>{{NaNCheck(player.best[28])}}</button></td>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(29)&&!player.levelCompleted.includes(29),locked:!GetLevelUnl(29),completed:GetLevelMedal(29)=='copper',silver:GetLevelMedal(29)=='silver',gold:GetLevelMedal(29)=='gold',platinum:GetLevelMedal(29)=='platinum'}" onclick="EnterLevel(29)">Level 2-9<br>{{NaNCheck(player.best[29])}}</button></td>
                 </tr>
+            </table><br>
+        <div v-if="!tabs.normal['Pack03']()">Get 14 total gold medals or 8 platinum medals to unlock next pack.</div>
+        </div>
+        <div v-if="tab.normal=='Pack03'">
+            <button v-bind:class="{mult:true, unlocked:true}" onclick="" style="width: 600px; height: 150px;">Level Pack 03 - Unceasing Spirit<br><br>New Feature: Multiply Blocks && Delete Blocks<br><br>Difficulty: Easy+ **</button>
+            <table>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(31)&&!player.levelCompleted.includes(31),locked:!GetLevelUnl(31),completed:GetLevelMedal(31)=='copper',silver:GetLevelMedal(31)=='silver',gold:GetLevelMedal(31)=='gold',platinum:GetLevelMedal(31)=='platinum'}" onclick="EnterLevel(31)">Level 3-1<br>{{NaNCheck(player.best[31])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(32)&&!player.levelCompleted.includes(32),locked:!GetLevelUnl(32),completed:GetLevelMedal(32)=='copper',silver:GetLevelMedal(32)=='silver',gold:GetLevelMedal(32)=='gold',platinum:GetLevelMedal(32)=='platinum'}" onclick="EnterLevel(32)">Level 3-2<br>{{NaNCheck(player.best[32])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(33)&&!player.levelCompleted.includes(33),locked:!GetLevelUnl(33),completed:GetLevelMedal(33)=='copper',silver:GetLevelMedal(33)=='silver',gold:GetLevelMedal(33)=='gold',platinum:GetLevelMedal(33)=='platinum'}" onclick="EnterLevel(33)">Level 3-3<br>{{NaNCheck(player.best[33])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(34)&&!player.levelCompleted.includes(34),locked:!GetLevelUnl(34),completed:GetLevelMedal(34)=='copper',silver:GetLevelMedal(34)=='silver',gold:GetLevelMedal(34)=='gold',platinum:GetLevelMedal(34)=='platinum'}" onclick="EnterLevel(34)">Level 3-4<br>{{NaNCheck(player.best[34])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(35)&&!player.levelCompleted.includes(35),locked:!GetLevelUnl(35),completed:GetLevelMedal(35)=='copper',silver:GetLevelMedal(35)=='silver',gold:GetLevelMedal(35)=='gold',platinum:GetLevelMedal(35)=='platinum'}" onclick="EnterLevel(35)">Level 3-5<br>{{NaNCheck(player.best[35])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(36)&&!player.levelCompleted.includes(36),locked:!GetLevelUnl(36),completed:GetLevelMedal(36)=='copper',silver:GetLevelMedal(36)=='silver',gold:GetLevelMedal(36)=='gold',platinum:GetLevelMedal(36)=='platinum'}" onclick="EnterLevel(36)">Level 3-6<br>{{NaNCheck(player.best[36])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(37)&&!player.levelCompleted.includes(37),locked:!GetLevelUnl(37),completed:GetLevelMedal(37)=='copper',silver:GetLevelMedal(37)=='silver',gold:GetLevelMedal(37)=='gold',platinum:GetLevelMedal(37)=='platinum'}" onclick="EnterLevel(37)">Level 3-7<br>{{NaNCheck(player.best[37])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(38)&&!player.levelCompleted.includes(38),locked:!GetLevelUnl(38),completed:GetLevelMedal(38)=='copper',silver:GetLevelMedal(38)=='silver',gold:GetLevelMedal(38)=='gold',platinum:GetLevelMedal(38)=='platinum'}" onclick="EnterLevel(38)">Level 3-8<br>{{NaNCheck(player.best[38])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(39)&&!player.levelCompleted.includes(39),locked:!GetLevelUnl(39),completed:GetLevelMedal(39)=='copper',silver:GetLevelMedal(39)=='silver',gold:GetLevelMedal(39)=='gold',platinum:GetLevelMedal(39)=='platinum'}" onclick="EnterLevel(39)">Level 3-9<br>{{NaNCheck(player.best[39])}}</button></td>
+                </tr>
             </table>
         </div>
         <div v-if="tab.normal=='Game'">
             <table>
             <tr v-for="(v,index) in LEVEL_DATA[player.activeLevel].map">
-                <td v-for="(v2,index2) in LEVEL_DATA[player.activeLevel].map[index]"><button v-bind:class="{thoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])>0,pthoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])<0,nothing:player.grid[index*10+index2+1] == 'nothing',barrier:player.grid[index*10+index2+1] == 'barrier',unlocked:true,current:player.current%10==index2+1&&Math.floor(player.current/10)==index}" v-on:click="player.current = index*10+index2+1,player.clicks+=1">{{player.grid[index*10+index2+1]!='nothing'?player.grid[index*10+index2+1]:''}}{{typeof(player.grid[index*10+index2+1]) == 'number'?'kg':''}}</button></td><br>
+                <td v-for="(v2,index2) in LEVEL_DATA[player.activeLevel].map[index]"><button v-bind:class="{thoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])>0,pthoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])<0,nothing:player.grid[index*10+index2+1] == 'nothing',barrier:player.grid[index*10+index2+1] == 'barrier',mult:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] != '0',delete:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] == '0',unlocked:true,current:player.current%10==index2+1&&Math.floor(player.current/10)==index}" v-on:click="player.current = index*10+index2+1,player.clicks+=1">{{player.grid[index*10+index2+1]!='nothing'?player.grid[index*10+index2+1]:''}}{{typeof(player.grid[index*10+index2+1]) == 'number'?'kg':''}}</button></td><br>
             </tr>
             </table><br>
             <details v-if="player.activeLevel==11" style="left:270px;position: relative;">
@@ -831,6 +949,19 @@ button:active{
                     <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #000000; text-decoration: underline;">Barrier Block</span><br><span style="color: #000000;">A kind of block which cannot be moved or merged with any other blocks. It's useless.</span></li>
                 </ul>
             </details>
+            <details v-if="player.activeLevel==31" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 3-1</summary>
+                <ul>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #00ff48; text-decoration: underline;">Multiply Block</span><br><span style="color: #000000;">A kind of block which can multiply the value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> when they moved onto it. But itself cannot be moved to any place.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==34" style="left:270px;position: relative;">
+                <summary style="color:#000000;position:relative;">Info for stage 3-4</summary>
+                <ul>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #ff0000; text-decoration: underline;">Delete Block</span><br><span style="color: #000000;">A kind of block which can eliminate <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> when they moved onto it. But itself cannot be moved to any place.</span></li>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can reach a weight below 45 kilograms in some stages. Try to reach lower weight in these stage and get a higher score!</span></li>
+                </ul>
+            </details>
         </div>
         <div v-if="tab.normal=='Result'">
             <div v-if="tmp.state=='failed'">
@@ -874,7 +1005,8 @@ button:active{
                 <button v-bind:class="{pthoughtUpg:true, unlocked:true}" onclick="CompleteStage()" style="width: 360px;">Complete the stage</button>
             </div>
         </div>
-<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story<br>Beta v1.1</b></div>
+<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story<br>Beta v1.2</b></div>
+<div style="position: absolute; left: 5px; bottom: 15px; font-size: 20px;" v-if="tmp.state == 'running'"><b>Stage{{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}<br>{{LEVEL_DATA[player.activeLevel].name}}</b></div>
 <div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart</button></div>
 <div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="LeaveStage()">Exit</button></div>
 <div style="position: absolute; left: 105px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlRight(),player.steps+=1">→</button></div>
