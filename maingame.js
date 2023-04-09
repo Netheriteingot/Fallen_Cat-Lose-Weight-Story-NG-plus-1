@@ -11,6 +11,7 @@ const tabs = {
         Options() { return true },
         'Pack01'() { return true },
         'Pack02'() { return tmp.gold>=5 },
+        'Pack03'() { return tmp.gold>=14||tmp.platinum>=8 },
         Main() { return true },
         Game() { return true },
         Result() { return true },
