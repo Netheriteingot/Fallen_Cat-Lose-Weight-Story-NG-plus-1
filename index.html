@@ -1009,10 +1009,10 @@ button:active{
 <div style="position: absolute; left: 5px; bottom: 15px; font-size: 20px;" v-if="tmp.state == 'running'"><b>Stage{{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}<br>{{LEVEL_DATA[player.activeLevel].name}}</b></div>
 <div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart</button></div>
 <div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="LeaveStage()">Exit</button></div>
-<div style="position: absolute; left: 105px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlRight(),player.steps+=1">→</button></div>
-<div style="position: absolute; left: 55px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlDown(),player.steps+=1">↓</button></div>
-<div style="position: absolute; left: 55px; top: 5px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlUp(),player.steps+=1">↑</button></div>
-<div style="position: absolute; left: 5px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlLeft(),player.steps+=1">←</button></div>
+<div style="position: absolute; left: 105px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlRight()">→</button></div>
+<div style="position: absolute; left: 55px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlDown()">↓</button></div>
+<div style="position: absolute; left: 55px; top: 5px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlUp()">↑</button></div>
+<div style="position: absolute; left: 5px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlLeft()">←</button></div>
     </div>
 </body>
 </html>
