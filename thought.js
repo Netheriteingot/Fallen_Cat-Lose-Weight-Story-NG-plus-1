@@ -9,7 +9,7 @@ function gridSetUp()
 	}
 }
 var list = []
-const TOTAL_LEVEL = 29
+const TOTAL_LEVEL = 39
 const LEVEL_DATA = {
 	11:{
 		name:"Fat girl",
@@ -295,7 +295,7 @@ const LEVEL_DATA = {
 		size:5,
 		time:15,
 		step:28,
-		medal:[1800,2500,3130],
+		medal:[2300,3100,3750],
 		map:{
 		    1:[3,"nothing",2,"barrier","nothing"],
 			2:["nothing",3,-1,"x0",-6],
@@ -309,7 +309,7 @@ const LEVEL_DATA = {
 		size:5,
 		time:17,
 		step:25,
-		medal:[800,1100,1580],
+		medal:[800,1100,1600],
 		map:{
 		    1:["barrier",4,-1,-2,"barrier"],
 			2:[-2,"barrier",1,"barrier",4],
@@ -365,13 +365,133 @@ const LEVEL_DATA = {
 		size:5,
 		time:15,
 		step:28,
-		medal:[1000,1700,2300],
+		medal:[1700,2300,2900],
 		map:{
 		    1:[-1,"nothing","x2","nothing",-1],
 			2:["nothing",1,"nothing",5,"nothing"],
 			3:[-2,"nothing",-2,"nothing",-2],
 			4:["nothing",5,"nothing",1,"nothing"],
 			5:["nothing",1,"x2","nothing",-3],
+	    },
+	},
+	41:{
+		name:"Easiest level in the whole pack xd",
+		size:4,
+		time:15,
+		step:28,
+		medal:[1200,1800,2440],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	42:{
+		name:"A classical Pack 2 level ?",
+		size:7,
+		time:25,
+		step:42,
+		medal:[1680,1800,1980],
+		map:{
+		    1:[-1,"nothing",-2,"nothing",-11,2,1],
+			2:[2,"nothing",7,"nothing","barrier","nothing",3],
+			3:["nothing","barrier","nothing",2,-4,5,"barrier"],
+			4:[-2,-2,"nothing",-2,"nothing","nothing",2],
+			5:[4,-3,-3,"x0",4,2,-4],
+			6:[-3,"nothing","nothing",4,"barrier","nothing",-3],
+			7:["nothing",-1,2,-4,"nothing",3,4],
+	    },
+	},
+	43:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	44:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	45:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	46:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	47:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	48:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
+	    },
+	},
+	49:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,"nothing","barrier",-5],
+			2:["barrier","nothing","x2","nothing"],
+			3:["nothing","x2","nothing","barrier"],
+			4:[2,"barrier","nothing",1],
 	    },
 	},
 }

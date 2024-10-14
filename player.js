@@ -81,7 +81,7 @@ function exportSave() {
 	let data = btoa(JSON.stringify(player))
 	const a = document.createElement('a');
 	a.setAttribute('href', 'data:text/plain;charset=utf-8,' + data);
-	a.setAttribute('download', "fclwd_"+new Date()+".txt");
+	a.setAttribute('download', "fclwd_NG_"+new Date()+".txt");
 	a.setAttribute('id', 'downloadSave');
 
 	document.body.appendChild(a);
@@ -90,7 +90,7 @@ function exportSave() {
 }
 //重置游戏
 function hardReset() {
-	if (!confirm("你真的要重置游戏吗?这不会给予你任何加成!")) return;
+	if (!confirm("Do you really want to reset the game? This will give no bonuses!")) return;
 	player = getStartPlayer();
 	save();
 	window.location.reload();
