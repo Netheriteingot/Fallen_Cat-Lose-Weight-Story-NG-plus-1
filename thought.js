@@ -9,7 +9,7 @@ function gridSetUp()
 	}
 }
 var list = []
-const TOTAL_LEVEL = 39
+const TOTAL_LEVEL = 49
 const LEVEL_DATA = {
 	11:{
 		name:"Fat girl",
@@ -404,29 +404,33 @@ const LEVEL_DATA = {
 	    },
 	},
 	43:{
-		name:"Easiest in the whole pack...",
-		size:5,
-		time:15,
-		step:28,
-		medal:[1000,1700,2300],
+		name:"micro.wav",
+		size:6,
+		time:18,
+		step:38,
+		medal:[1650,1800,1950],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:["nothing",-5,10,"nothing","nothing","x2"],
+			2:["x0","barrier","barrier","barrier","nothing","barrier"],
+			3:[1,"x2","nothing",-3,-2,"barrier"],
+			4:["nothing","barrier","barrier","barrier","nothing","nothing"],
+			5:[-2,"barrier","nothing","barrier","nothing","nothing"],
+			6:["nothing","nothing","nothing","nothing",1,6],
 	    },
 	},
 	44:{
-		name:"Easiest in the whole pack...",
-		size:5,
-		time:15,
-		step:28,
-		medal:[1000,1700,2300],
+		name:"How...?",
+		size:6,
+		time:20,
+		step:45,
+		medal:[2050,2250,2550],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:["nothing",1,"x2","nothing","x1","x0"],
+			2:[1,"nothing","nothing","nothing",1,"nothing"],
+			3:["x3",1,-3,1,"nothing","x3"],
+			4:[1,"nothing","nothing","nothing",1,"nothing"],
+			5:["nothing",1,"nothing","nothing","nothing",1],
+			6:[1,"nothing","x2",1,"nothing","nothing"]
 	    },
 	},
 	45:{
@@ -568,12 +572,18 @@ function EnterLevel(level)
 	player.current = 11
 	showTab("Game","normal")
 }
+function calcScore(level, score)
+{
+	if(score<=LEVEL_DATA[level].medal[0])return 0;
+	else if(score>=LEVEL_DATA[level].medal[2])return 100;
+	else return 100*(score-LEVEL_DATA[level].medal[0])/(LEVEL_DATA[level].medal[2]-LEVEL_DATA[level].medal[0]);
+}
 function GetTotalScore()
 {
 	let total = new Decimal(0)
 	for(var i=11; i<=TOTAL_LEVEL; i++)
 	{
-        if(player.best[i]!=undefined && player.best[i]!=null) total = total.add(player.best[i])
+        if(player.best[i]!=undefined && player.best[i]!=null) total = total.add(calcScore(i, player.best[i]))
 	}
 	return total
 }
