@@ -9,7 +9,8 @@ function gridSetUp()
 	}
 }
 var list = []
-const TOTAL_LEVEL = 49
+const TOTAL_LEVEL = 59
+const x="nothing", b="barrier"
 const LEVEL_DATA = {
 	11:{
 		name:"Fat girl",
@@ -18,9 +19,9 @@ const LEVEL_DATA = {
 		step:7,
 		medal:[500,1000,1400],
 		map:{
-			1:["nothing","nothing","nothing"],
-			2:["nothing",1,"nothing"],
-			3:["nothing",-1,"nothing"],
+			1:[x,x,x],
+			2:[x,1,x],
+			3:[x,-1,x],
 		}
 	},
 	12:{
@@ -30,9 +31,9 @@ const LEVEL_DATA = {
 		step:7,
 		medal:[700,1100,1350],
 		map:{
-			1:["nothing",2,"nothing"],
-			2:["nothing",-1,"nothing"],
-			3:["nothing",-1,"nothing"],
+			1:[x,2,x],
+			2:[x,-1,x],
+			3:[x,-1,x],
 		}
 	},
 	13:{
@@ -42,9 +43,9 @@ const LEVEL_DATA = {
 		step:8,
 		medal:[900,1200,1450],
 		map:{
-			1:["nothing",4,"nothing"],
-			2:["nothing",-2,"nothing"],
-			3:["nothing",-2,"nothing"],
+			1:[x,4,x],
+			2:[x,-2,x],
+			3:[x,-2,x],
 		}
 	},
 	14:{
@@ -54,9 +55,9 @@ const LEVEL_DATA = {
 		step:7,
 		medal:[950,1200,1400],
 		map:{
-			1:["nothing",1,"nothing"],
-			2:["nothing","nothing","nothing"],
-			3:["nothing",-2,"nothing"],
+			1:[x,1,x],
+			2:[x,x,x],
+			3:[x,-2,x],
 		}
 	},
 	15:{
@@ -67,9 +68,9 @@ const LEVEL_DATA = {
 		medal:[900,1200,1450],
 		map:{
 			1:[-1,-1,-1,6],
-			2:[-1,"nothing","nothing","nothing"],
-			3:[-1,"nothing","nothing","nothing"],
-			4:[-1,"nothing","nothing","nothing"],
+			2:[-1,x,x,x],
+			3:[-1,x,x,x],
+			4:[-1,x,x,x],
 		}
 	},
 	16:{
@@ -79,10 +80,10 @@ const LEVEL_DATA = {
 		step:12,
 		medal:[700,1150,1600],
 		map:{
-			1:["nothing",1,-1,"nothing"],
-			2:["nothing","nothing","nothing","nothing"],
+			1:[x,1,-1,x],
+			2:[x,x,x,x],
 			3:[2,1,-1,-2],
-			4:["nothing","nothing","nothing","nothing"],
+			4:[x,x,x,x],
 		}
 	},
 	17:{
@@ -92,11 +93,11 @@ const LEVEL_DATA = {
 		step:15,
 		medal:[800,1100,1400],
 		map:{
-			1:[-3,"nothing","nothing","nothing",-3],
-			2:["nothing","nothing","nothing","nothing","nothing"],
-			3:["nothing",3,"nothing",3,"nothing"],
-			4:["nothing","nothing","nothing","nothing","nothing"],
-			5:[-3,"nothing","nothing","nothing",-3],
+			1:[-3,x,x,x,-3],
+			2:[x,x,x,x,x],
+			3:[x,3,x,3,x],
+			4:[x,x,x,x,x],
+			5:[-3,x,x,x,-3],
 		}
 	},
 	18:{
@@ -106,11 +107,11 @@ const LEVEL_DATA = {
 		step:23,
 		medal:[800,1100,1300],
 		map:{
-			1:[-1,-3,"nothing",-3,-1],
-			2:[-3,2,"nothing",2,-3],
-			3:["nothing","nothing",18,"nothing","nothing"],
-			4:[-3,2,"nothing",2,-3],
-			5:[-1,-3,"nothing",-3,-1],
+			1:[-1,-3,x,-3,-1],
+			2:[-3,2,x,2,-3],
+			3:[x,x,18,x,x],
+			4:[-3,2,x,2,-3],
+			5:[-1,-3,x,-3,-1],
 		}
 	},
 	19:{
@@ -121,9 +122,9 @@ const LEVEL_DATA = {
 		medal:[900,1300,1500],
 		map:{
 			1:[-1,-2,3,-2,-1],
-			2:[-2,"nothing",-1,"nothing",5],
+			2:[-2,x,-1,x,5],
 			3:[3,-1,-6,-1,3],
-			4:[-1,"nothing",-1,"nothing",5],
+			4:[-1,x,-1,x,5],
 			5:[-2,5,3,-3,-3],
 		}
 	},
@@ -134,9 +135,9 @@ const LEVEL_DATA = {
 		step:9,
 		medal:[700,1000,1350],
 		map:{
-			1:["nothing",2,"nothing"],
-			2:["nothing",'barrier',"nothing"],
-			3:["nothing",-5,"nothing"],
+			1:[x,2,x],
+			2:[x,'barrier',x],
+			3:[x,-5,x],
 		}
 	},
 	22:{
@@ -147,7 +148,7 @@ const LEVEL_DATA = {
 		medal:[700,1250,1300],
 		map:{
 			1:[-3,2,-2],
-			2:["barrier",5,"barrier"],
+			2:[b,5,b],
 			3:[-3,3,-2],
 		}
 	},
@@ -158,10 +159,10 @@ const LEVEL_DATA = {
 		step:14,
 		medal:[700,1000,1440],
 		map:{
-			1:[1,2,"barrier","nothing"],
-			2:["barrier","nothing",-2,"nothing"],
-			3:[2,1,"barrier",-2],
-			4:[-3,"nothing",-2,"nothing"],
+			1:[1,2,b,x],
+			2:[b,x,-2,x],
+			3:[2,1,b,-2],
+			4:[-3,x,-2,x],
 		}
 	},
 	24:{
@@ -171,11 +172,11 @@ const LEVEL_DATA = {
 		step:20,
 		medal:[600,1100,1480],
 		map:{
-			1:["nothing",-1,"nothing",-1,"nothing"],
-			2:["barrier",1,-1,1,"barrier"],
-			3:[1,-4,"barrier",-4,11],
-			4:[1,"barrier",-2,"barrier",1],
-			5:[-3,1,"nothing",1,-3],
+			1:[x,-1,x,-1,x],
+			2:[b,1,-1,1,b],
+			3:[1,-4,b,-4,11],
+			4:[1,b,-2,b,1],
+			5:[-3,1,x,1,-3],
 		}
 	},
 	25:{
@@ -185,11 +186,11 @@ const LEVEL_DATA = {
 		step:19,
 		medal:[800,1150,1450],
 		map:{
-			1:["barrier",3,"barrier",3,"nothing"],
-			2:[2,-4,"barrier","nothing",-3],
-			3:["barrier",-4,2,-3,"barrier"],
-			4:[2,"nothing","barrier",-4,"nothing"],
-			5:[-1,"nothing",1,4,"barrier"],
+			1:[b,3,b,3,x],
+			2:[2,-4,b,x,-3],
+			3:[b,-4,2,-3,b],
+			4:[2,x,b,-4,x],
+			5:[-1,x,1,4,b],
 		}
 	},
 	26:{
@@ -199,12 +200,12 @@ const LEVEL_DATA = {
 		step:25,
 		medal:[1000,1300,1600],
 		map:{
-			1:["nothing",7,"nothing","nothing",-1,"nothing"],
-			2:["barrier",-2,"barrier","barrier",-3,1],
-			3:["barrier","nothing",1,2,"nothing",1],
-			4:["barrier","nothing",2,1,"nothing","barrier"],
-			5:["barrier",-1,-1,-1,-3,"nothing"],
-			6:["nothing",-6,"nothing",2,-1,"nothing"],
+			1:[x,7,x,x,-1,x],
+			2:[b,-2,b,b,-3,1],
+			3:[b,x,1,2,x,1],
+			4:[b,x,2,1,x,b],
+			5:[b,-1,-1,-1,-3,x],
+			6:[x,-6,x,2,-1,x],
 		}
 	},
 	27:{
@@ -214,13 +215,13 @@ const LEVEL_DATA = {
 		step:30,
 		medal:[900,1300,1650],
 		map:{
-			1:["nothing",1,-2,1,"nothing",-1,"nothing"],
-			2:["barrier","barrier","barrier",1,-1,3,"nothing"],
-			3:["nothing",-1,"nothing",1,"nothing",-1,"nothing"],
-			4:[-2,3,-2,1,"barrier","barrier","barrier"],
-			5:["nothing",-1,"nothing",1,"nothing",-1,"nothing"],
-			6:["barrier","barrier","barrier",1,-1,3,-6],
-			7:["nothing",5,-2,1,"nothing",-1,"nothing"],
+			1:[x,1,-2,1,x,-1,x],
+			2:[b,b,b,1,-1,3,x],
+			3:[x,-1,x,1,x,-1,x],
+			4:[-2,3,-2,1,b,b,b],
+			5:[x,-1,x,1,x,-1,x],
+			6:[b,b,b,1,-1,3,-6],
+			7:[x,5,-2,1,x,-1,x],
 		}
 	},
 	28:{
@@ -230,12 +231,12 @@ const LEVEL_DATA = {
 		step:26,
 		medal:[700,1200,1450],
 		map:{
-			1:["nothing","nothing","nothing",1,-5,"nothing"],
-			2:[-4,"barrier","nothing",2,"barrier","nothing"],
-			3:["barrier",-4,"nothing","barrier",-2,"nothing"],
-			4:["nothing","nothing","nothing","nothing","nothing","nothing"],
-			5:[3,"barrier",-2,"barrier",2,-4],
-			6:["nothing",-1,"nothing",4,"nothing","nothing"],
+			1:[x,x,x,1,-5,x],
+			2:[-4,b,x,2,b,x],
+			3:[b,-4,x,b,-2,x],
+			4:[x,x,x,x,x,x],
+			5:[3,b,-2,b,2,-4],
+			6:[x,-1,x,4,x,x],
 		}
 	},
 	29:{
@@ -245,12 +246,12 @@ const LEVEL_DATA = {
 		step:30,
 		medal:[1100,1300,1600],
 		map:{
-			1:[2,"nothing","nothing","nothing",-6,1],
-			2:[3,"nothing","barrier",-7,"barrier",-5],
-			3:[-2,"barrier",2,"nothing",-6,"nothing"],
-			4:[-2,3,-1,2,"barrier","nothing"],
-			5:[4,"barrier",3,"barrier","nothing","nothing"],
-			6:["barrier",3,-1,2,2,-1],
+			1:[2,x,x,x,-6,1],
+			2:[3,x,b,-7,b,-5],
+			3:[-2,b,2,x,-6,x],
+			4:[-2,3,-1,2,b,x],
+			5:[4,b,3,b,x,x],
+			6:[b,3,-1,2,2,-1],
 		}
 	},
 	31:{
@@ -260,9 +261,9 @@ const LEVEL_DATA = {
 		step:7,
 		medal:[850,1100,1300],
 		map:{
-			1:["nothing",4,"nothing"],
-			2:["nothing","x2","nothing"],
-			3:["nothing",-2,"nothing"],
+			1:[x,4,x],
+			2:[x,"x2",x],
+			3:[x,-2,x],
 		}
 	},
 	32:{
@@ -272,10 +273,10 @@ const LEVEL_DATA = {
 		step:14,
 		medal:[700,1000,1440],
 		map:{
-			1:["nothing","nothing","nothing",-3],
-			2:[-2,"x2","nothing","nothing"],
-			3:[4,"nothing","x2","nothing"],
-			4:[-1,9,-2,"nothing"],
+			1:[x,x,x,-3],
+			2:[-2,"x2",x,x],
+			3:[4,x,"x2",x],
+			4:[-1,9,-2,x],
 		}
 	},
 	33:{
@@ -285,9 +286,9 @@ const LEVEL_DATA = {
 		step:14,
 		medal:[700,1000,1300],
 		map:{
-			1:[15,"nothing",-4],
-			2:["x3","nothing","x2"],
-			3:[-3,"nothing",10],
+			1:[15,x,-4],
+			2:["x3",x,"x2"],
+			3:[-3,x,10],
 		}
 	},
 	34:{
@@ -297,11 +298,11 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[2300,3100,3750],
 		map:{
-		    1:[3,"nothing",2,"barrier","nothing"],
-			2:["nothing",3,-1,"x0",-6],
-			3:["nothing",-2,"barrier",-3,"nothing"],
-			4:[-5,"nothing",-1,3,"nothing"],
-			5:["x0","barrier",7,"nothing",3],
+		    1:[3,x,2,b,x],
+			2:[x,3,-1,"x0",-6],
+			3:[x,-2,b,-3,x],
+			4:[-5,x,-1,3,x],
+			5:["x0",b,7,x,3],
 		},
 	},
 	35:{
@@ -311,11 +312,11 @@ const LEVEL_DATA = {
 		step:25,
 		medal:[800,1100,1600],
 		map:{
-		    1:["barrier",4,-1,-2,"barrier"],
-			2:[-2,"barrier",1,"barrier",4],
+		    1:[b,4,-1,-2,b],
+			2:[-2,b,1,b,4],
 			3:[-1,1,"x2",1,-1],
-			4:[1,"barrier",1,"barrier",2],
-			5:["barrier","nothing",-2,"x0","barrier"],
+			4:[1,b,1,b,2],
+			5:[b,x,-2,"x0",b],
 		},
 	},
 	36:{
@@ -338,11 +339,11 @@ const LEVEL_DATA = {
 		step:32,
 		medal:[1200,1600,2000],
 		map:{
-		    1:[5,"nothing",13,"barrier","x2"],
-			2:["nothing","nothing",-5,-1,8],
-			3:[-3,"barrier","x0","nothing","nothing"],
-			4:["nothing","nothing","barrier","nothing",-3],
-			5:["x2","barrier",-2,"nothing",1],
+		    1:[5,x,13,b,"x2"],
+			2:[x,x,-5,-1,8],
+			3:[-3,b,"x0",x,x],
+			4:[x,x,b,x,-3],
+			5:["x2",b,-2,x,1],
 	        },
 		},
 	38:{
@@ -352,12 +353,12 @@ const LEVEL_DATA = {
 		step:40,
 		medal:[1500,3000,4500],
 		map:{
-		1:["nothing",-2,5,-3,"nothing",-2],
-		2:[-3,"nothing","x2","nothing",-3,"nothing"],
-		3:["nothing",5,"nothing",4,"barrier","nothing"],
-		4:["nothing","barrier",4,"nothing","nothing",14],
-		5:["nothing",-3,"nothing","x2","nothing",-2],
-		6:[-2,"nothing",-3,5,-3,"nothing"],
+		1:[x,-2,5,-3,x,-2],
+		2:[-3,x,"x2",x,-3,x],
+		3:[x,5,x,4,b,x],
+		4:[x,b,4,x,x,14],
+		5:[x,-3,x,"x2",x,-2],
+		6:[-2,x,-3,5,-3,x],
 		},
 	},
 	39:{
@@ -367,11 +368,11 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[1700,2300,2900],
 		map:{
-		    1:[-1,"nothing","x2","nothing",-1],
-			2:["nothing",1,"nothing",5,"nothing"],
-			3:[-2,"nothing",-2,"nothing",-2],
-			4:["nothing",5,"nothing",1,"nothing"],
-			5:["nothing",1,"x2","nothing",-3],
+		    1:[-1,x,"x2",x,-1],
+			2:[x,1,x,5,x],
+			3:[-2,x,-2,x,-2],
+			4:[x,5,x,1,x],
+			5:[x,1,"x2",x,-3],
 	    },
 	},
 	41:{
@@ -381,10 +382,10 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[1200,1800,2440],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
 	    },
 	},
 	42:{
@@ -394,13 +395,13 @@ const LEVEL_DATA = {
 		step:42,
 		medal:[1680,1800,1980],
 		map:{
-		    1:[-1,"nothing",-2,"nothing",-11,2,1],
-			2:[2,"nothing",7,"nothing","barrier","nothing",3],
-			3:["nothing","barrier","nothing",2,-4,5,"barrier"],
-			4:[-2,-2,"nothing",-2,"nothing","nothing",2],
+		    1:[-1,x,-2,x,-11,2,1],
+			2:[2,x,7,x,b,x,3],
+			3:[x,b,x,2,-4,5,b],
+			4:[-2,-2,x,-2,x,x,2],
 			5:[4,-3,-3,"x0",4,2,-4],
-			6:[-3,"nothing","nothing",4,"barrier","nothing",-3],
-			7:["nothing",-1,2,-4,"nothing",3,4],
+			6:[-3,x,x,4,b,x,-3],
+			7:[x,-1,2,-4,x,3,4],
 	    },
 	},
 	43:{
@@ -410,12 +411,12 @@ const LEVEL_DATA = {
 		step:38,
 		medal:[1650,1800,1950],
 		map:{
-		    1:["nothing",-5,10,"nothing","nothing","x2"],
-			2:["x0","barrier","barrier","barrier","nothing","barrier"],
-			3:[1,"x2","nothing",-3,-2,"barrier"],
-			4:["nothing","barrier","barrier","barrier","nothing","nothing"],
-			5:[-2,"barrier","nothing","barrier","nothing","nothing"],
-			6:["nothing","nothing","nothing","nothing",1,6],
+		    1:[x,-5,10,x,x,"x2"],
+			2:["x0",b,b,b,x,b],
+			3:[1,"x2",x,-3,-2,b],
+			4:[x,b,b,b,x,x],
+			5:[-2,b,x,b,x,x],
+			6:[x,x,x,x,1,6],
 	    },
 	},
 	44:{
@@ -425,25 +426,27 @@ const LEVEL_DATA = {
 		step:45,
 		medal:[2050,2250,2550],
 		map:{
-		    1:["nothing",1,"x2","nothing","x1","x0"],
-			2:[1,"nothing","nothing","nothing",1,"nothing"],
-			3:["x3",1,-3,1,"nothing","x3"],
-			4:[1,"nothing","nothing","nothing",1,"nothing"],
-			5:["nothing",1,"nothing","nothing","nothing",1],
-			6:[1,"nothing","x2",1,"nothing","nothing"]
+		    1:[x,1,"x2",x,"x1","x0"],
+			2:[1,x,x,x,1,x],
+			3:["x3",1,-3,1,x,"x3"],
+			4:[1,x,x,x,1,x],
+			5:[x,1,x,x,x,1],
+			6:[1,x,"x2",1,x,x]
 	    },
 	},
 	45:{
-		name:"Easiest in the whole pack...",
-		size:5,
-		time:15,
-		step:28,
-		medal:[1000,1700,2300],
+		name:"6th Ark",
+		size:6,
+		time:20,
+		step:35,
+		medal:[1200,1500,1720],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:[10,x,-5,-5,x,14],
+			2:[x,-2,1,x,-2,x],
+			3:[-2,x,b,x,x,-2],
+			4:[x,b,"x2",1,b,x],
+			5:[1,6,x,b,x,x],
+			6:[x,x,1,x,x,"x2"],
 	    },
 	},
 	46:{
@@ -453,10 +456,10 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[1000,1700,2300],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
 	    },
 	},
 	47:{
@@ -466,10 +469,10 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[1000,1700,2300],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
 	    },
 	},
 	48:{
@@ -479,10 +482,10 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[1000,1700,2300],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
 	    },
 	},
 	49:{
@@ -492,10 +495,142 @@ const LEVEL_DATA = {
 		step:28,
 		medal:[1000,1700,2300],
 		map:{
-		    1:[6,"nothing","barrier",-5],
-			2:["barrier","nothing","x2","nothing"],
-			3:["nothing","x2","nothing","barrier"],
-			4:[2,"barrier","nothing",1],
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
+	    },
+	},
+	50:{
+		name:"Labyrinth",
+		size:7,
+		time:520,
+		step:535,
+		medal:[1000,1700,2300],
+		map:{
+			1:[50,50,50,b,50,50,50],
+			2:[50,b,50,50,50,b,50],
+			3:[50,50,b,x,b,50,50],
+			4:[b,50,b,"x9",b,50,b],
+			5:[50,50,b,b,b,50,50],
+			6:[50,b,50,-282,50,b,50],
+			7:[50,50,50,b,50,50,50],
+	    },
+	},
+	51:{
+		name:"Introduction to XOR",
+		size:3,
+		time:7,
+		step:7,
+		medal:[1050,1200,1350],
+		map:{
+			1:[x,3,x],
+			2:[x,"^2",x],
+			3:[x,-1,x],
+	    },
+	},
+	52:{
+		name:"Another introduction to XOR",
+		size:3,
+		time:7,
+		step:11,
+		medal:[1050,1200,1350],
+		map:{
+			1:[x,7,x],
+			2:[x,"^4",x],
+			3:[x,-7,x],
+	    },
+	},
+	53:{
+		name:"Two Paths",
+		size:4,
+		time:10,
+		step:15,
+		medal:[1900,2400,2900],
+		map:{
+			1:[x,x,-2,x],
+			2:[x,"^3",x,x],
+			3:[-3,x,x,x],
+			4:[x,x,4,x],
+	    },
+	},
+	54:{
+		name:"Combine them together...",
+		size:4,
+		time:15,
+		step:25,
+		medal:[2000,2250,2500],
+		map:{
+			1:[x,b,6,x],
+			2:[x,"^3",x,x],
+			3:[x,x,b,"x2"],
+			4:[-2,x,-3,x],
+	    },
+	},
+	55:{
+		name:"Chronomia",
+		size:5,
+		time:20,
+		step:30,
+		medal:[1200,1450,1700],
+		map:{
+			1:[x,x,"x2",x,1],
+			2:[x,14,x,x,"^7"],
+			3:[-2,x,-2,x,"^5"],
+			4:[x,2,-2,5,x],
+			5:[x,5,"x2",x,-1],
+	    },
+	},
+	56:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
+	    },
+	},
+	57:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
+	    },
+	},
+	58:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
+	    },
+	},
+	59:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
 	    },
 	},
 }
