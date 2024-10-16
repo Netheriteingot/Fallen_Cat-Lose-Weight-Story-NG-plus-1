@@ -139,7 +139,7 @@
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(49)&&!player.levelCompleted.includes(49),locked:!GetLevelUnl(49),completed:GetLevelMedal(49)=='copper',silver:GetLevelMedal(49)=='silver',gold:GetLevelMedal(49)=='gold',platinum:GetLevelMedal(49)=='platinum'}" onclick="EnterLevel(49)">Level 4-9<br>{{NaNCheck(player.best[49])}}</button></td --->
                 </tr>
                 <!-- tr>
-                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(50)&&!player.levelCompleted.includes(50),locked:!GetLevelUnl(50),completed:GetLevelMedal(50)=='copper',silver:GetLevelMedal(50)=='silver',gold:GetLevelMedal(50)=='gold',platinum:GetLevelMedal(50)=='platinum'}" onclick="EnterLevel(50)">Level 4-EX<br>{{NaNCheck(player.best[50])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(50)&&!player.levelCompleted.includes(50),locked:!GetLevelUnl(50),completed:GetLevelMedal(50)=='copper',silver:GetLevelMedal(50)=='silver',gold:GetLevelMedal(50)=='gold',platinum:GetLevelMedal(50)=='platinum'}" onclick="EnterLevel(50)">Level 4-10<br>{{NaNCheck(player.best[50])}}</button></td>
                 </tr -->
             </table><br>
         </div>
@@ -172,7 +172,7 @@
             <details v-if="player.activeLevel==11" style="position: relative;width:80%;left:10%;">
                 <summary style="color:#000000;position:relative;">Info for stage 1-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #aa00ff; text-decoration: underline;">Fat Block</span><br><span style="color: #000000;">The color of this type of block is pink. It stands for the fat inside Fallen_Cat's body. If the table of the stage have not any <span style="color: #aa00ff; text-underline-position: above;">fat block</span>, You will beat the stage.</span></li>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #aa00ff; text-decoration: underline;">Fat Block</span><br><span style="color: #000000;">The color of this type of block is pink. It stands for the fat inside Fallen_Cat's body. If the table of the stage doesn't contain any <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span>, You will beat the stage.</span></li>
                     <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #008cff; text-decoration: underline;">Exercise Block</span><br><span style="color: #000000;">The color of this type of block is blue. It stands for the lose weight plans of Fallen_Cat. You can merge <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> with <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> to Eliminate them and help Fallen_Cat to lose weight.</span></li>
                     <li><span style="background-color:#00ff44 ;color:black ; padding:3px; margin:5px">How to play</span><span style="color: #000000;">use your mouse to select blocks and use <span style="color: #ff0000;">WASD (If you are a mobile player, please use the keyboard in the left-up corner)</span> on the keyboard to move blocks in the grid.<span style="color: #ff0000; text-decoration: underline;"> Your goal is eliminate all fat blocks in the table. If you have no exercise block but fat blocks, you'll fail the stage.</span></span></li>
                 </ul>
@@ -186,7 +186,7 @@
             <details v-if="player.activeLevel==14" style="position: relative;width:80%;left:10%;">
                 <summary style="color:#000000;position:relative;">Info for stage 1-4</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">If you don't take exercise or eat too much during a day, your body will get fatter.<br>The value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> and <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> <span style="color: #ff0000;">WILL BE INCREASED BY 1</span> if you move them to a empty slot.</span></li>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">If you don't take exercise or eat too much during a day, your body will get fatter.<br>The value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> and <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> <span style="color: #ff0000;">WILL BE INCREASED BY 1</span> if you move them to an empty slot.</span></li>
                 </ul>
             </details>
             <details v-if="player.activeLevel==15" style="position: relative;width:80%;left:10%;">
@@ -226,6 +226,12 @@
                     <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can reach a weight below 45 kilograms in some stages. Try to reach lower weight in these stage and get a higher score!</span></li>
                 </ul>
             </details>
+            <details v-if="player.activeLevel==39" style="position: relative;width:80%;left:10%;">
+                <summary style="color:#000000;position:relative;">Info for stage 3-9</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">The modder's brain went spasmodic on doing this one.</span></li>
+                </ul>
+            </details>
             <details v-if="player.activeLevel==51" style="position: relative;width:80%;left:10%;">
                 <summary style="color:#000000;position:relative;">Info for stage 5-1</summary>
                 <ul>
@@ -234,7 +240,7 @@
                 </ul>
             </details>
             <details v-if="player.activeLevel==52" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-9</summary>
+                <summary style="color:#000000;position:relative;">Info for stage 5-2</summary>
                 <ul>
                     <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You will need some strategy when using this block...</span></li>
                 </ul>

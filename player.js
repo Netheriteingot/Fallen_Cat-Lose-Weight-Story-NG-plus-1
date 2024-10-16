@@ -130,7 +130,7 @@ function MoveBlock(dx)
 	}
 	else if(player.grid[player.current+dx][0]=='^')
 	{
-		if(Math.abs(Number(player.grid[player.current+dx][1]))==player.grid[player.current]) player.grid[player.current+dx]='nothing';
+		if(Number(player.grid[player.current+dx][1])==Math.abs(player.grid[player.current])) player.grid[player.current+dx]='nothing';
 		else player.grid[player.current+dx] = (Number(player.grid[player.current+dx][1])^Math.abs(player.grid[player.current]))*Math.sign(player.grid[player.current]);
 		player.grid[player.current] = 'nothing';
 //		console.log("type 4");
