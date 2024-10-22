@@ -9,7 +9,7 @@ function gridSetUp()
 	}
 }
 var list = []
-const TOTAL_LEVEL = 59
+const TOTAL_LEVEL = 69
 const x="nothing", b="barrier"
 const LEVEL_DATA = {
 	11:{
@@ -483,6 +483,21 @@ const LEVEL_DATA = {
 			6:[x,x,1,x,x,"x2"],
 	    },
 	},
+	/*
+	46:{
+		name:"test",
+		size:4,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[-1,1,'l','l'],
+			2:['d',x,x,'u'],
+			3:['d',x,x,'u'],
+			4:['r','r','r','u'],
+	    },
+	},
+	*/
 	46:{
 		name:"Easiest in the whole pack...",
 		size:5,
@@ -592,7 +607,7 @@ const LEVEL_DATA = {
 	    },
 	},
 	53:{
-		name:"Two Paths",
+		name:"Another Path Pt.II",
 		size:4,
 		time:10,
 		step:15,
@@ -686,6 +701,128 @@ const LEVEL_DATA = {
 			4:[2,b,x,1],
 	    },
 	},
+	61:{
+		name:"Slide slide",
+		size:3,
+		time:7,
+		step:7,
+		medal:[1370,1430,1490],
+		map:{
+			1:[1,"r","d"],
+			2:[x,x,"d"],
+			3:[-1,"l","l"],
+	    },
+	},
+	62:{
+		name:"Crave Wave",
+		size:5,
+		time:7,
+		step:11,
+		medal:[700,1000,1300],
+		map:{
+			1:[3,x,x,6,"x2"],
+			2:["d",b,"^7",b,"u"],
+			3:["d",b,"u",b,"u"],
+			4:["d",b,7,b,"u"],
+			5:[4,-7,x,x,-3],
+	    },
+	},
+	63:{
+		name:"Another Path Pt.III",
+		size:5,
+		time:10,
+		step:15,
+		medal:[1600,1800,2000],
+		map:{
+			1:[x,x,6,x,x],
+			2:[x,x,"d",x,x],
+			3:[-6,"l","l","l",5],
+			4:[x,x,"d",x,x],
+			5:[x,x,-6,x,x],
+	    },
+	},
+	64:{
+		name:"Combine them together...",
+		size:4,
+		time:15,
+		step:25,
+		medal:[2000,2250,2500],
+		map:{
+			1:[x,b,6,x],
+			2:[x,"^3",x,x],
+			3:[x,x,b,"x2"],
+			4:[-2,x,-3,x],
+	    },
+	},
+	65:{
+		name:"Chronomia",
+		size:5,
+		time:20,
+		step:30,
+		medal:[1200,1450,1700],
+		map:{
+			1:[x,x,"x2",x,1],
+			2:[x,14,x,x,"^7"],
+			3:[-2,x,-2,x,"^5"],
+			4:[x,2,-2,5,x],
+			5:[x,5,"x2",x,-1],
+	    },
+	},
+	66:{
+		name:"DM me on discord if you see this name",
+		size:6,
+		time:15,
+		step:28,
+		medal:[1450,1750,2050],
+		map:{
+			1:[x,x,x,x,x,x],
+			2:[x,x,b,"^8",b,x],
+			3:["x2",x,x,5,x,-9],
+			4:["x1",x,4,x,x,x],
+			5:[6,b,1,b,x,x],
+			6:[x,x,x,"x2",x,x],
+	    },
+	},
+	67:{
+		name:"Parity",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1990,2190,2390],
+		map:{
+		    1:[5,x,x,"x2",x],
+			2:[x,x,x,x,x],
+			3:[x,"^5",4,x,x],
+			4:[x,x,x,x,x],
+			5:[5,x,x,-10,x],
+	    },
+	},
+	68:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
+	    },
+	},
+	69:{
+		name:"Easiest in the whole pack...",
+		size:5,
+		time:15,
+		step:28,
+		medal:[1000,1700,2300],
+		map:{
+		    1:[6,x,b,-5],
+			2:[b,x,"x2",x],
+			3:[x,"x2",x,b],
+			4:[2,b,x,1],
+	    },
+	},
 }
 function GetLevelMedal(level)
 {
@@ -762,9 +899,8 @@ function EnterLevel(level)
 }
 function calcScore(level, score)
 {
-	if(score<=LEVEL_DATA[level].medal[0])return 0;
-	else if(score>=LEVEL_DATA[level].medal[2])return 100;
-	else return 100*(score-LEVEL_DATA[level].medal[0])/(LEVEL_DATA[level].medal[2]-LEVEL_DATA[level].medal[0]);
+	if(score<=LEVEL_DATA[level].medal[0])return 20;
+	else return 20+80*(score-LEVEL_DATA[level].medal[0])/(LEVEL_DATA[level].medal[2]-LEVEL_DATA[level].medal[0]);
 }
 function GetTotalScore()
 {

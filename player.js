@@ -101,17 +101,31 @@ document.onkeydown = function(event){
 	if(event.keyCode == 65) controlLeft()
 	if(event.keyCode == 68) controlRight()
 }
-function MoveBlock(dx)
+function MoveBlock(dx, extraStep)
 {
-	console.log("Moving block "+player.current);
+	const arrow = new Map();
+	arrow.set('u', -10);
+	arrow.set('d', 10);
+	arrow.set('l', -1);
+	arrow.set('r', 1);
+//	console.log("Moving block "+player.current);
 	if(player.current+dx<=10||player.current+dx>=10*(1+LEVEL_DATA[player.activeLevel].size)) return;
 	if((player.current+dx)%10==0||(player.current+dx)%10>LEVEL_DATA[player.activeLevel].size||(Math.floor((player.current+dx)/10)!=Math.floor(player.current/10)&&(dx==1||dx==-1))) return;
 	if(player.grid[player.current+dx]=='barrier') return;
 	if(typeof(player.grid[player.current])!='number'||NaNCheck(player.grid[player.current]==0)) return;
-	if(player.grid[player.current+dx]=='nothing'){
+	if(arrow.get(player.grid[player.current+dx])!=undefined){
+		var dir=arrow.get(player.grid[player.current+dx]);
+		player.grid[player.current+dx]=player.grid[player.current];
+		player.grid[player.current] = 'nothing';
+		player.current+=dx;
+//		console.log("Moving slide "+dir);
+		MoveBlock(dir, 0);
+	}
+	else if(player.grid[player.current+dx]=='nothing'){
 		player.grid[player.current+dx]=player.grid[player.current]+1;
 		if(player.grid[player.current+dx]==0)player.grid[player.current+dx]='nothing';
 		player.grid[player.current] = 'nothing';
+		player.current+=dx;
 //		console.log("type 1");
 	}
 	else if(typeof(player.grid[player.current+dx])=='number'){
@@ -119,6 +133,7 @@ function MoveBlock(dx)
 		player.grid[player.current+dx]+=player.grid[player.current];
 		if(player.grid[player.current+dx]==0)player.grid[player.current+dx]='nothing';
 		player.grid[player.current] = 'nothing';
+		player.current+=dx;
 //		console.log("type 2");
 	}
 	else if(player.grid[player.current+dx][0]=='x')
@@ -126,6 +141,7 @@ function MoveBlock(dx)
 		if(player.grid[player.current+dx][1]=='0') player.grid[player.current+dx]='nothing';
 		else player.grid[player.current+dx] = Number(player.grid[player.current+dx][1])*player.grid[player.current];
 		player.grid[player.current] = 'nothing';
+		player.current+=dx;
 //		console.log("type 3");
 	}
 	else if(player.grid[player.current+dx][0]=='^')
@@ -133,17 +149,17 @@ function MoveBlock(dx)
 		if(Number(player.grid[player.current+dx][1])==Math.abs(player.grid[player.current])) player.grid[player.current+dx]='nothing';
 		else player.grid[player.current+dx] = (Number(player.grid[player.current+dx][1])^Math.abs(player.grid[player.current]))*Math.sign(player.grid[player.current]);
 		player.grid[player.current] = 'nothing';
+		player.current+=dx;
 //		console.log("type 4");
 	}
 	if(tmp.state=='running'){
-		player.steps++;
-		player.current+=dx;
+		player.steps += extraStep;
 	}
 }
-function controlUp(){MoveBlock(-10)};
-function controlDown(){MoveBlock(10)};
-function controlLeft(){MoveBlock(-1)};
-function controlRight(){MoveBlock(1)};
+function controlUp(){MoveBlock(-10,1)};
+function controlDown(){MoveBlock(10,1)};
+function controlLeft(){MoveBlock(-1,1)};
+function controlRight(){MoveBlock(1,1)};
 function HaveExercise()
 {
 	for(var i=1; i<=LEVEL_DATA[player.activeLevel].size; i++)
