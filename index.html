@@ -37,11 +37,14 @@
       <span class="desc" style="color: white;font-size: 20px;">This is a mod of Fallen_Cat's Lose Weight Story made by l319836.</span><br>
       <span class="desc" style="color: white;font-size: 20px;">You can play the original game </span>
       <a class="desc" style="color: white;font-size: 20px;" href="https://beautyfallencat.github.io/Fallen_Cat-Lose-Weight-Story/">here.</a><br><br>
-      <span class="desc" style="color: white;font-size: 23px;">Oct 15 2024 - Beta v1.2.4</span><br>
+      <span class="desc" style="color: white;font-size: 30px;">--- Update Log ---</span><br><br>
+      <span class="desc" style="color: white;font-size: 23px;">Oct 23 2024 - Beta v1.2.5</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Added 4 new levels.</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- The harder levels of Pack 06 have come! (Packs 05 and 06 will be completed soon.)</span><br><br>
+      <span class="desc" style="color: white;font-size: 23px;">Oct 22 2024 - Beta v1.2.4</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added a new type of block: Slide Blocks.</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added 3 new levels and a new pack (Pack 06).</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Better CSS.</span><br><br>
-      <span class="desc" style="color: white;font-size: 30px;">--- Update Log ---</span><br><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 17 2024 - Beta v1.2.3</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added 3 new levels.</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- It is really hard to think of a good new level, so please let me know if you have any good ideas.</span><br><br>
@@ -183,13 +186,13 @@
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(63)&&!player.levelCompleted.includes(63),locked:!GetLevelUnl(63),completed:GetLevelMedal(63)=='copper',silver:GetLevelMedal(63)=='silver',gold:GetLevelMedal(63)=='gold',platinum:GetLevelMedal(63)=='platinum'}" onclick="EnterLevel(63)">Level 6-3<br>{{NaNCheck(player.best[63])}}</button></td>
                 </tr>
                 <tr>
-                    <!-- td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(64)&&!player.levelCompleted.includes(64),locked:!GetLevelUnl(64),completed:GetLevelMedal(64)=='copper',silver:GetLevelMedal(64)=='silver',gold:GetLevelMedal(64)=='gold',platinum:GetLevelMedal(64)=='platinum'}" onclick="EnterLevel(64)">Level 6-4<br>{{NaNCheck(player.best[64])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(64)&&!player.levelCompleted.includes(64),locked:!GetLevelUnl(64),completed:GetLevelMedal(64)=='copper',silver:GetLevelMedal(64)=='silver',gold:GetLevelMedal(64)=='gold',platinum:GetLevelMedal(64)=='platinum'}" onclick="EnterLevel(64)">Level 6-4<br>{{NaNCheck(player.best[64])}}</button></td>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(65)&&!player.levelCompleted.includes(65),locked:!GetLevelUnl(65),completed:GetLevelMedal(65)=='copper',silver:GetLevelMedal(65)=='silver',gold:GetLevelMedal(65)=='gold',platinum:GetLevelMedal(65)=='platinum'}" onclick="EnterLevel(65)">Level 6-5<br>{{NaNCheck(player.best[65])}}</button></td>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(66)&&!player.levelCompleted.includes(66),locked:!GetLevelUnl(66),completed:GetLevelMedal(66)=='copper',silver:GetLevelMedal(66)=='silver',gold:GetLevelMedal(66)=='gold',platinum:GetLevelMedal(66)=='platinum'}" onclick="EnterLevel(66)">Level 6-6<br>{{NaNCheck(player.best[66])}}</button></td>
                 </tr>
                 <tr>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(67)&&!player.levelCompleted.includes(67),locked:!GetLevelUnl(67),completed:GetLevelMedal(67)=='copper',silver:GetLevelMedal(67)=='silver',gold:GetLevelMedal(67)=='gold',platinum:GetLevelMedal(67)=='platinum'}" onclick="EnterLevel(67)">Level 6-7<br>{{NaNCheck(player.best[67])}}</button></td>
-                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(68)&&!player.levelCompleted.includes(68),locked:!GetLevelUnl(68),completed:GetLevelMedal(68)=='copper',silver:GetLevelMedal(68)=='silver',gold:GetLevelMedal(68)=='gold',platinum:GetLevelMedal(68)=='platinum'}" onclick="EnterLevel(68)">Level 6-8<br>{{NaNCheck(player.best[68])}}</button></td>
+                    <!-- td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(68)&&!player.levelCompleted.includes(68),locked:!GetLevelUnl(68),completed:GetLevelMedal(68)=='copper',silver:GetLevelMedal(68)=='silver',gold:GetLevelMedal(68)=='gold',platinum:GetLevelMedal(68)=='platinum'}" onclick="EnterLevel(68)">Level 6-8<br>{{NaNCheck(player.best[68])}}</button></td>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(69)&&!player.levelCompleted.includes(69),locked:!GetLevelUnl(69),completed:GetLevelMedal(69)=='copper',silver:GetLevelMedal(69)=='silver',gold:GetLevelMedal(69)=='gold',platinum:GetLevelMedal(69)=='platinum'}" onclick="EnterLevel(69)">Level 6-9<br>{{NaNCheck(player.best[69])}}</button></td --->
                 </tr>
                 <!-- tr>
@@ -233,6 +236,12 @@
                 <summary style="color:#000000;position:relative;">Info for stage 1-6</summary>
                 <ul>
                     <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You cannot merge <span style="color: #aa00ff; text-underline-position: above;">2 fat blocks</span> together.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==17" style="position: relative;width:80%;left:10%;">
+                <summary style="color:#000000;position:relative;">Info for stage 1-7</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">A "switch" refers to selecting a new block. Switches slightly contributes to your score!</span></li>
                 </ul>
             </details>
             <details v-if="player.activeLevel==19" style="position: relative;width:80%;left:10%;">
@@ -304,6 +313,12 @@
                     <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Slide blocks can be used only once, but there is a crossroad here. Figure it out itself!</span></li>
                 </ul>
             </details>
+            <details v-if="player.activeLevel==66" style="position: relative;width:80%;left:10%;">
+                <summary style="color:#000000;position:relative;">Info for stage 6-6</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can prevent the fat tile from increasing by blocking a fat tile in front of where it is going to go!</span></li>
+                </ul>
+            </details>
         </div>
         <div v-if="tab.normal=='Result'">
             <div v-if="tmp.state=='failed'">
@@ -347,7 +362,7 @@
                 <button v-bind:class="{pthoughtUpg:true, unlocked:true}" onclick="CompleteStage()" style="width: 360px;">Complete the stage</button>
             </div>
         </div>
-<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story NG<br>Beta v1.2.4</b></div>
+<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story NG<br>Beta v1.2.5</b></div>
 <div style="position: absolute; left: 5px; bottom: 15px; font-size: 20px;" v-if="tmp.state == 'running'"><b>Stage{{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}<br>{{LEVEL_DATA[player.activeLevel].name}}</b></div>
 <div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart</button></div>
 <div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="LeaveStage()">Exit</button></div>

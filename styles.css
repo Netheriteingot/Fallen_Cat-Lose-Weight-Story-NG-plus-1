@@ -449,8 +449,8 @@ body
     background-color: black;
     border: 3px solid white;
       background-image:repeating-linear-gradient(0deg,
-      hsla(0,0%,100%,.1),
-      hsla(0,0%,100%,.1) 15px,
+      hsla(0,0%,100%,.14),
+      hsla(0,0%,100%,.14) 15px,
       transparent 0,
       transparent 30px);
       background-size: 1000% 1000%;
@@ -472,8 +472,8 @@ body
     background-color: black;
     border: 3px solid white;
       background-image:repeating-linear-gradient(0deg,
-      hsla(0,0%,100%,.1),
-      hsla(0,0%,100%,.1) 15px,
+      hsla(0,0%,100%,.14),
+      hsla(0,0%,100%,.14) 15px,
       transparent 0,
       transparent 30px);
       background-size: 1000% 1000%;
@@ -495,8 +495,8 @@ body
     background-color: black;
     border: 3px solid white;
       background-image:repeating-linear-gradient(90deg,
-      hsla(0,0%,100%,.1),
-      hsla(0,0%,100%,.1) 15px,
+      hsla(0,0%,100%,.14),
+      hsla(0,0%,100%,.14) 15px,
       transparent 0,
       transparent 30px);
       background-size: 1000% 1000%;
@@ -518,8 +518,8 @@ body
     background-color: black;
     border: 3px solid white;
       background-image:repeating-linear-gradient(90deg,
-      hsla(0,0%,100%,.1),
-      hsla(0,0%,100%,.1) 15px,
+      hsla(0,0%,100%,.14),
+      hsla(0,0%,100%,.14) 15px,
       transparent 0,
       transparent 30px);
       background-size: 1000% 1000%;
