@@ -95,11 +95,18 @@ function hardReset() {
 	save();
 	window.location.reload();
 }
-document.onkeydown = function(event){
-	if(event.keyCode == 87) controlUp()
-	if(event.keyCode == 83) controlDown()
-	if(event.keyCode == 65) controlLeft()
-	if(event.keyCode == 68) controlRight()
+document.onkeydown = function(event) {
+    // WASD Controls
+    if(event.keyCode == 87) controlUp();    // W
+    if(event.keyCode == 83) controlDown();  // S
+    if(event.keyCode == 65) controlLeft();   // A
+    if(event.keyCode == 68) controlRight();  // D
+
+    // Arrow Key Controls
+    if(event.keyCode == 38) controlUp();     // Up Arrow
+    if(event.keyCode == 40) controlDown();   // Down Arrow
+    if(event.keyCode == 37) controlLeft();    // Left Arrow
+    if(event.keyCode == 39) controlRight();   // Right Arrow
 }
 function MoveBlock(dx, extraStep)
 {

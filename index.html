@@ -19,7 +19,7 @@
     <div id="app">
       <div class = "desc">Overall Score:  <b class="thoughtfont">{{formatWhole(tmp.totalPoints)}}</b></div><br>
       <span class = "desc" v-if="tab.normal=='Game'"><b class="thoughtfont" style="color: rgb(254,173,205);text-shadow: rgb(234, 126, 169) 0.166667em 0.166667em 0.3333333em;">{{formatWhole(calcWeight())}}</b> kilograms of weight</span><br>
-      <div v-if="tab.normal!='Main'&&tab.normal!='Game'&&tab.normal!='Result'"><table>
+      <div v-if="tab.normal!='Main'&&tab.normal!='Game'&&tab.normal!='Result'" style="overflow-x: scroll; scrollbar-width: thin; width: 40%; position: absolute; left: 50%; transform: translate(-50%, -50%);"><table>
         <tr>
             <td v-for="(tab, name) in tabs.normal"><button v-if="tabs.normal[name]()&&name!='Main'&&name!='Game'&&name!='Result'" v-on:click="showTab(name,'normal')" v-bind:class="{[name.toLowerCase()]: true, tabbtn: true, selected: tab.normal==this.name}">{{name}}</button></td>
         </tr>
@@ -27,6 +27,7 @@
     <div id="ticker" onload="startTicker()">
       <div id="ticker-text"></div>
     </div>
+    <br>
     <div v-if="tab.normal=='Options'">
         <div v-if="tab.options=='Setting'"><br>
       <button v-bind:class="{optionSelection:true}" onclick="importSave()">Import</button>
@@ -40,7 +41,9 @@
       <span class="desc" style="color: white;font-size: 30px;">--- Update Log ---</span><br><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 23 2024 - Beta v1.2.5</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added 4 new levels.</span><br>
-      <span class="desc" style="color: white;font-size: 16px;">- The harder levels of Pack 06 have come! (Packs 05 and 06 will be completed soon.)</span><br><br>
+      <span class="desc" style="color: white;font-size: 16px;">- The harder levels of Pack 06 have come! (Packs 05 and 06 will be completed soon.)</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Enabled arrow keys movement.</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Scrollbar for packs.</span><br><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 22 2024 - Beta v1.2.4</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added a new type of block: Slide Blocks.</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added 3 new levels and a new pack (Pack 06).</span><br>
@@ -68,7 +71,7 @@
             <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="showTab('Pack01','normal')" style="width: 360px;">Start Game!!</button><br><br><br>
         </div>
         <div v-if="tab.normal=='Pack01'">
-            <button class="{thoughtUpg:true, unlocked:true}" onclick="" style="background-color: dodgerblue; width: 600px; height: 150px; text-shadow: none;color: white; box-shadow: 0 4px 6px dodgerblue; border-color: skyblue;">Level Pack 01 - First Step in a New World<br><br>New Feature: Fat Blocks && Exercise Blocks<br><br>Difficulty: Easy *</button>
+            <button v-bind:class="{thoughtUpg:true, unlocked:true}" onclick="" style="background-color: dodgerblue; width: 600px; height: 150px; text-shadow: none;color: white; box-shadow: 0 4px 6px dodgerblue; border-color: skyblue;">Level Pack 01 - First Step in a New World<br><br>New Feature: Fat Blocks && Exercise Blocks<br><br>Difficulty: Easy *</button>
             <table>
                 <tr>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(11)&&!player.levelCompleted.includes(11),locked:!GetLevelUnl(11),completed:GetLevelMedal(11)=='copper',silver:GetLevelMedal(11)=='silver',gold:GetLevelMedal(11)=='gold',platinum:GetLevelMedal(11)=='platinum'}" onclick="EnterLevel(11)">Level 1-1<br>{{NaNCheck(player.best[11])}}</button></td>
