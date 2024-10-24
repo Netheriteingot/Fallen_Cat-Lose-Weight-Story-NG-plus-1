@@ -40,7 +40,7 @@
       <a class="desc" style="color: white;font-size: 20px;" href="https://beautyfallencat.github.io/Fallen_Cat-Lose-Weight-Story/">here.</a><br><br>
       <span class="desc" style="color: white;font-size: 30px;">--- Update Log ---</span><br><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 23 2024 - Beta v1.2.5</span><br>
-      <span class="desc" style="color: white;font-size: 16px;">- Added 4 new levels.</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Added 6 new levels.</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- The harder levels of Pack 06 have come! (Packs 05 and 06 will be completed soon.)</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Enabled arrow keys movement.</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Scrollbar for packs.</span><br><br>
@@ -367,8 +367,8 @@
         </div>
 <div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story NG<br>Beta v1.2.5</b></div>
 <div style="position: absolute; left: 5px; bottom: 15px; font-size: 20px;" v-if="tmp.state == 'running'"><b>Stage{{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}<br>{{LEVEL_DATA[player.activeLevel].name}}</b></div>
-<div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart</button></div>
-<div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;" onclick="LeaveStage()">Exit</button></div>
+<div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px; width: 150px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart (R)</button></div>
+<div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px; width: 150px;" onclick="LeaveStage()">Exit (Esc)</button></div>
 <div style="position: absolute; left: 105px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlRight()">→</button></div>
 <div style="position: absolute; left: 55px; top: 55px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlDown()">↓</button></div>
 <div style="position: absolute; left: 55px; top: 5px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px;width: 50px;" onclick="controlUp()">↑</button></div>

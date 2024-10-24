@@ -107,6 +107,9 @@ document.onkeydown = function(event) {
     if(event.keyCode == 40) controlDown();   // Down Arrow
     if(event.keyCode == 37) controlLeft();    // Left Arrow
     if(event.keyCode == 39) controlRight();   // Right Arrow
+
+	if(event.keyCode == 82) {active = player.activeLevel,LeaveStage(),EnterLevel(active);}   // Restart
+	if(event.keyCode == 27) LeaveStage();    //Leave Stage
 }
 function MoveBlock(dx, extraStep)
 {
