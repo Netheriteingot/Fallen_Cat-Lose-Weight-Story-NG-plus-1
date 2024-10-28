@@ -111,6 +111,22 @@ document.onkeydown = function(event) {
 	if(event.keyCode == 82) {active = player.activeLevel,LeaveStage(),EnterLevel(active);}   // Restart
 	if(event.keyCode == 27) LeaveStage();    //Leave Stage
 }
+function Shift(dx){
+	var arr=[], currentindex=0;
+	for(var i=0;i<LEVEL_DATA[player.activeLevel].size;i++){
+		if(dx==-1)arr[i]=10*Math.floor(player.current/10)+i+1;
+		if(dx==1)arr[i]=10*Math.floor(player.current/10)+LEVEL_DATA[player.activeLevel].size-i;
+		if(dx==-10)arr[i]=player.current%10 + 10*(i+1);
+		if(dx==10)arr[i]=player.current%10 + 10*(LEVEL_DATA[player.activeLevel].size-i);
+		if(player.current==arr[i])currentindex=i-1;
+	}
+//	console.log("Shifting...");
+//	console.log(arr);
+	var tmp=player.grid[arr[0]];
+	for(var i=1;i<LEVEL_DATA[player.activeLevel].size;i++)player.grid[arr[i-1]]=player.grid[arr[i]];
+	player.grid[arr[LEVEL_DATA[player.activeLevel].size-1]]=tmp;
+	player.current=arr[(currentindex+5)%5];
+}
 function MoveBlock(dx, extraStep)
 {
 	const arrow = new Map();
@@ -119,10 +135,16 @@ function MoveBlock(dx, extraStep)
 	arrow.set('l', -1);
 	arrow.set('r', 1);
 //	console.log("Moving block "+player.current);
+	if(player.grid[player.current][0]=='m'){
+		player.grid[player.current]='m'+(player.grid[player.current][1]-1);
+		if(player.grid[player.current]=='m0')player.grid[player.current]="nothing";
+//		console.log(player.grid[player.current]);
+		Shift(dx);
+	}
 	if(player.current+dx<=10||player.current+dx>=10*(1+LEVEL_DATA[player.activeLevel].size)) return;
 	if((player.current+dx)%10==0||(player.current+dx)%10>LEVEL_DATA[player.activeLevel].size||(Math.floor((player.current+dx)/10)!=Math.floor(player.current/10)&&(dx==1||dx==-1))) return;
 	if(player.grid[player.current+dx]=='barrier') return;
-	if(typeof(player.grid[player.current])!='number'||NaNCheck(player.grid[player.current]==0)) return;
+	if((typeof(player.grid[player.current])!='number')||NaNCheck(player.grid[player.current])==0) return;
 	if(arrow.get(player.grid[player.current+dx])!=undefined){
 		var dir=arrow.get(player.grid[player.current+dx]);
 		player.grid[player.current+dx]=player.grid[player.current];

@@ -3,89 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrow Up Button Test</title>
+    <title>Diagonal Lines in Box</title>
     <style>
-        .arrow-up {
-            position: relative;
-            color: black;
-            background-color: rgb(255, 165, 0); /* Base background color */
-            border: 3px solid rgb(192, 123, 0); /* Border color */
-            width: 100px; /* Width of the button */
-            height: 100px; /* Height of the button */
-            margin-left: 5px; /* Left margin */
-            border-radius: 4%; /* Rounded corners */
-            box-shadow: 0px 5px 3px rgb(255, 165, 0); /* Shadow effect */
-            text-shadow: 0px 4px 0px rgb(192, 123, 0); /* Text shadow */
-            font-size: 20px; /* Font size */
-            margin: 5px; /* Margin around the button */
-            padding: 10px; /* Padding inside the button */
-            cursor: pointer; /* Pointer cursor on hover */
-            overflow: hidden; /* Prevent overflow of background */
-            background-image: repeating-linear-gradient(
-                45deg, /* Diagonal stripes */
-                rgba(255, 255, 255, 0.5) 25%, /* White stripes */
-                transparent 25%, /* Transparent space */
-                transparent 50%, /* Continue transparent */
-                rgba(255, 255, 255, 0.5) 50%, /* White again */
-                rgba(255, 255, 255, 0.5) 75%, /* White stripes */
-                transparent 75%, /* Transparent space */
-                transparent 100% /* End with transparent */
-            );
-            animation: moveBackground 1s linear infinite; /* Animation for background movement */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-image: 
+                repeating-linear-gradient(45deg,
+                    rgb(19, 21, 25),
+                    rgb(19, 21, 25) 3px,  /* Line thickness */
+                    transparent 3px,
+                    transparent 69.2px),    /* Space between lines */
+                repeating-linear-gradient(135deg,
+                    rgb(19, 21, 25),
+                    rgb(19, 21, 25) 3px,  /* Line thickness */
+                    transparent 3px,
+                    transparent 69.2px);    /* Space between lines */
+            background-size: 100px 100px; /* Size of the box */
+            background-position: center; /* Center the background */
+            border: 1px solid black; /* Optional: for visibility */
         }
-.xor {
-    color: black;
-    background-color: rgb(221,160,221);
-    border: 3px solid rgb(237,218,222);
-    background-image: repeating-linear-gradient(
-        45deg, /* Diagonal stripes */
-        rgba(255, 255, 255, 0.5) 25%, /* White stripes */
-        transparent 25%, /* Transparent space */
-        transparent 50%, /* Continue transparent */
-        rgba(255, 255, 255, 0.5) 50%, /* White again */
-        rgba(255, 255, 255, 0.5) 75%, /* White stripes */
-        transparent 75%, /* Transparent space */
-        transparent 100% /* End with transparent */
-    );
-      background-size: 1000% 1000%;
-      background-position: 0% 0%;
-    width: 100px;
-    height: 100px;
-    margin-left: 5px;
-    border-radius: 4%;
-    box-shadow: 0px 5px 3px rgb(221, 160, 221);
-    text-shadow: 0px 4px 0px rgb(237, 218, 222);
-    font-size: 20px;
-    margin: 5px;
-    padding: 10px 10px 10px 10px;
-    cursor: pointer;
-    animation: antiClimb 20s linear infinite;
-}
-
-        /* Background animation */
-        @keyframes moveBackground {
-            0% {
-                background-position: 0% 0%; /* Start position */
-            }
-            100% {
-                background-position: 100% 0%; /* Move horizontally */
-            }
-        }
-
-@keyframes antiClimb {
-	0% {
-		background-position: 0% 0%;
-	}
-	50% {
-		background-position: 0% -112%;
-	}
-	100% {
-		background-position: 0% -215%;
-	}
-}
     </style>
 </head>
 <body>
-    <button class="arrow-up">Arrow Up</button>
+    <div class="box"></div>
 </body>
 </html>

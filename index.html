@@ -33,12 +33,16 @@
       <button v-bind:class="{optionSelection:true}" onclick="importSave()">Import</button>
       <button v-bind:class="{optionSelection:true}" onclick="exportSave()">Export</button>
       <button v-bind:class="{optionSelection:true}" onclick="hardReset()" style="background-color: #FF0000;">Reset</button><br><br>
-      <span class="desc" style="color: white;font-size: 20px;">The NG savefile is compatible with original game!</span><br><br>
+      <span class="desc" style="color: white;font-size: 20px;">The original savefile is compatible with NG game!</span><br><br>
       <span class="desc" style="color: white;font-size: 30px;">--- Info ---</span><br><br>
       <span class="desc" style="color: white;font-size: 20px;">This is a mod of Fallen_Cat's Lose Weight Story made by l319836.</span><br>
       <span class="desc" style="color: white;font-size: 20px;">You can play the original game </span>
       <a class="desc" style="color: white;font-size: 20px;" href="https://beautyfallencat.github.io/Fallen_Cat-Lose-Weight-Story/">here.</a><br><br>
       <span class="desc" style="color: white;font-size: 30px;">--- Update Log ---</span><br><br>
+      <span class="desc" style="color: white;font-size: 23px;">Oct 28 2024 - Beta v1.2.6</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Added a new type of block: Piston Blocks.</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Added 7 new levels and a new pack (Pack 07).</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Packs 05 and 06 has been completed.</span><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 23 2024 - Beta v1.2.5</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added 6 new levels.</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- The harder levels of Pack 06 have come! (Packs 05 and 06 will be completed soon.)</span><br>
@@ -174,7 +178,7 @@
                 </tr>
                 <tr>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(57)&&!player.levelCompleted.includes(57),locked:!GetLevelUnl(57),completed:GetLevelMedal(57)=='copper',silver:GetLevelMedal(57)=='silver',gold:GetLevelMedal(57)=='gold',platinum:GetLevelMedal(57)=='platinum'}" onclick="EnterLevel(57)">Level 5-7<br>{{NaNCheck(player.best[57])}}</button></td>
-                    <!-- td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(58)&&!player.levelCompleted.includes(58),locked:!GetLevelUnl(58),completed:GetLevelMedal(58)=='copper',silver:GetLevelMedal(58)=='silver',gold:GetLevelMedal(58)=='gold',platinum:GetLevelMedal(58)=='platinum'}" onclick="EnterLevel(58)">Level 5-8<br>{{NaNCheck(player.best[58])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(58)&&!player.levelCompleted.includes(58),locked:!GetLevelUnl(58),completed:GetLevelMedal(58)=='copper',silver:GetLevelMedal(58)=='silver',gold:GetLevelMedal(58)=='gold',platinum:GetLevelMedal(58)=='platinum'}" onclick="EnterLevel(58)">Level 5-8<br>{{NaNCheck(player.best[58])}}</button></td>
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(59)&&!player.levelCompleted.includes(59),locked:!GetLevelUnl(59),completed:GetLevelMedal(59)=='copper',silver:GetLevelMedal(59)=='silver',gold:GetLevelMedal(59)=='gold',platinum:GetLevelMedal(59)=='platinum'}" onclick="EnterLevel(59)">Level 5-9<br>{{NaNCheck(player.best[59])}}</button></td --->
                 </tr>
             </table><br>
@@ -202,11 +206,35 @@
                     <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(60)&&!player.levelCompleted.includes(60),locked:!GetLevelUnl(60),completed:GetLevelMedal(60)=='copper',silver:GetLevelMedal(60)=='silver',gold:GetLevelMedal(60)=='gold',platinum:GetLevelMedal(60)=='platinum'}" onclick="EnterLevel(60)">Level 6-0<br>{{NaNCheck(player.best[60])}}</button></td>
                 </tr -->
             </table><br>
+            <div v-if="!tabs.normal['Pack07']()">Get 44 gold medals or 2 All Platinum Packs to unlock the next pack.</div>
+        </div>
+        <div v-if="tab.normal=='Pack07'">
+            <button v-bind:class="{m:true, forcap:true}" onclick="" style="width: 600px; height: 150px;">Level Pack 07 - Thrusting Cubicle<br><br>New Feature: Piston Blocks<br><br>Difficulty: Medium **</button>
+            <table>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(71)&&!player.levelCompleted.includes(71),locked:!GetLevelUnl(71),completed:GetLevelMedal(71)=='copper',silver:GetLevelMedal(71)=='silver',gold:GetLevelMedal(71)=='gold',platinum:GetLevelMedal(71)=='platinum'}" onclick="EnterLevel(71)">Level 7-1<br>{{NaNCheck(player.best[71])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(72)&&!player.levelCompleted.includes(72),locked:!GetLevelUnl(72),completed:GetLevelMedal(72)=='copper',silver:GetLevelMedal(72)=='silver',gold:GetLevelMedal(72)=='gold',platinum:GetLevelMedal(72)=='platinum'}" onclick="EnterLevel(72)">Level 7-2<br>{{NaNCheck(player.best[72])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(73)&&!player.levelCompleted.includes(73),locked:!GetLevelUnl(73),completed:GetLevelMedal(73)=='copper',silver:GetLevelMedal(73)=='silver',gold:GetLevelMedal(73)=='gold',platinum:GetLevelMedal(73)=='platinum'}" onclick="EnterLevel(73)">Level 7-3<br>{{NaNCheck(player.best[73])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(74)&&!player.levelCompleted.includes(74),locked:!GetLevelUnl(74),completed:GetLevelMedal(74)=='copper',silver:GetLevelMedal(74)=='silver',gold:GetLevelMedal(74)=='gold',platinum:GetLevelMedal(74)=='platinum'}" onclick="EnterLevel(74)">Level 7-4<br>{{NaNCheck(player.best[74])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(75)&&!player.levelCompleted.includes(75),locked:!GetLevelUnl(75),completed:GetLevelMedal(75)=='copper',silver:GetLevelMedal(75)=='silver',gold:GetLevelMedal(75)=='gold',platinum:GetLevelMedal(75)=='platinum'}" onclick="EnterLevel(75)">Level 7-5<br>{{NaNCheck(player.best[75])}}</button></td>
+                    <!-- td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(76)&&!player.levelCompleted.includes(76),locked:!GetLevelUnl(76),completed:GetLevelMedal(76)=='copper',silver:GetLevelMedal(76)=='silver',gold:GetLevelMedal(76)=='gold',platinum:GetLevelMedal(76)=='platinum'}" onclick="EnterLevel(76)">Level 7-7<br>{{NaNCheck(player.best[76])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(77)&&!player.levelCompleted.includes(77),locked:!GetLevelUnl(77),completed:GetLevelMedal(77)=='copper',silver:GetLevelMedal(77)=='silver',gold:GetLevelMedal(77)=='gold',platinum:GetLevelMedal(77)=='platinum'}" onclick="EnterLevel(77)">Level 7-7<br>{{NaNCheck(player.best[77])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(78)&&!player.levelCompleted.includes(78),locked:!GetLevelUnl(78),completed:GetLevelMedal(78)=='copper',silver:GetLevelMedal(78)=='silver',gold:GetLevelMedal(78)=='gold',platinum:GetLevelMedal(78)=='platinum'}" onclick="EnterLevel(78)">Level 7-8<br>{{NaNCheck(player.best[78])}}</button></td>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(79)&&!player.levelCompleted.includes(79),locked:!GetLevelUnl(79),completed:GetLevelMedal(79)=='copper',silver:GetLevelMedal(79)=='silver',gold:GetLevelMedal(79)=='gold',platinum:GetLevelMedal(79)=='platinum'}" onclick="EnterLevel(79)">Level 7-9<br>{{NaNCheck(player.best[79])}}</button></td>
+                </tr>
+                <tr>
+                    <td><button v-bind:class="{ethoughtUpg:true,unlocked:GetLevelUnl(70)&&!player.levelCompleted.includes(70),locked:!GetLevelUnl(70),completed:GetLevelMedal(70)=='copper',silver:GetLevelMedal(70)=='silver',gold:GetLevelMedal(70)=='gold',platinum:GetLevelMedal(70)=='platinum'}" onclick="EnterLevel(70)">Level 7-0<br>{{NaNCheck(player.best[70])}}</button></td>
+                </tr -->
+            </table><br>
         </div>
         <div v-if="tab.normal=='Game'">
             <table>
             <tr v-for="(v,index) in LEVEL_DATA[player.activeLevel].map">
-                <td v-for="(v2,index2) in LEVEL_DATA[player.activeLevel].map[index]"><button v-bind:class="{thoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])>0,pthoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])<0,nothing:player.grid[index*10+index2+1] == 'nothing',barrier:player.grid[index*10+index2+1] == 'barrier',mult:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] != '0',delete:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] == '0',xor:player.grid[index*10+index2+1][0] == '^',arrowup:player.grid[index*10+index2+1] == 'u',arrowdown:player.grid[index*10+index2+1] == 'd',arrowleft:player.grid[index*10+index2+1] == 'l',arrowright:player.grid[index*10+index2+1] == 'r',unlocked:true,current:player.current%10==index2+1&&Math.floor(player.current/10)==index}" v-on:click="player.current = index*10+index2+1,player.clicks+=1">{{player.grid[index*10+index2+1]!='nothing'&&player.grid[index*10+index2+1]!='u'&&player.grid[index*10+index2+1]!='d'&&player.grid[index*10+index2+1]!='l'&&player.grid[index*10+index2+1]!='r'?player.grid[index*10+index2+1]:''}}{{typeof(player.grid[index*10+index2+1]) == 'number'?'kg':''}}</button></td><br>
+                <td v-for="(v2,index2) in LEVEL_DATA[player.activeLevel].map[index]"><button v-bind:class="{thoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])>0,pthoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])<0,nothing:player.grid[index*10+index2+1] == 'nothing',barrier:player.grid[index*10+index2+1] == 'barrier',mult:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] != '0',delete:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] == '0',xor:player.grid[index*10+index2+1][0] == '^',m:player.grid[index*10+index2+1][0] == 'm',arrowup:player.grid[index*10+index2+1] == 'u',arrowdown:player.grid[index*10+index2+1] == 'd',arrowleft:player.grid[index*10+index2+1] == 'l',arrowright:player.grid[index*10+index2+1] == 'r',unlocked:true,current:player.current%10==index2+1&&Math.floor(player.current/10)==index}" v-on:click="player.current = index*10+index2+1,player.clicks+=1">{{player.grid[index*10+index2+1]!='nothing'&&player.grid[index*10+index2+1]!='u'&&player.grid[index*10+index2+1]!='d'&&player.grid[index*10+index2+1]!='l'&&player.grid[index*10+index2+1]!='r'?(player.grid[index*10+index2+1][0]=="m"?player.grid[index*10+index2+1][1]:player.grid[index*10+index2+1]):''}}{{typeof(player.grid[index*10+index2+1]) == 'number'?'kg':''}}</button></td><br>
             </tr>
             </table><br>
             <details v-if="player.activeLevel==11" style="position: relative;width:80%;left:10%;">
@@ -322,6 +350,19 @@
                     <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can prevent the fat tile from increasing by blocking a fat tile in front of where it is going to go!</span></li>
                 </ul>
             </details>
+            <details v-if="player.activeLevel==71" style="position: relative;width:80%;left:10%;">
+                <summary style="color:#000000;position:relative;">Info for stage 7-1</summary>
+                <ul>
+                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: rgb(19,21,25); text-decoration: underline;">Piston Block</span><br><span style="color: #000000;">When you move it, it will push all the blocks in the whole row or column altogether!</span></li>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">A Piston Block can only be used a finite number of time. The remaining chances of using the block is written on it.</span></li>
+                </ul>
+            </details>
+            <details v-if="player.activeLevel==72" style="position: relative;width:80%;left:10%;">
+                <summary style="color:#000000;position:relative;">Info for stage 7-2</summary>
+                <ul>
+                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">When a block is on the edge of the map when it is pushed by a Piston Block, it will instead go to the other side of the map!</span></li>
+                </ul>
+            </details>
         </div>
         <div v-if="tab.normal=='Result'">
             <div v-if="tmp.state=='failed'">
@@ -365,7 +406,7 @@
                 <button v-bind:class="{pthoughtUpg:true, unlocked:true}" onclick="CompleteStage()" style="width: 360px;">Complete the stage</button>
             </div>
         </div>
-<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story NG<br>Beta v1.2.5</b></div>
+<div style="position: absolute; right: 5px; top: 15px; font-size: 20px;"><b>FC's Lose Weight Story NG<br>Beta v1.2.6</b></div>
 <div style="position: absolute; left: 5px; bottom: 15px; font-size: 20px;" v-if="tmp.state == 'running'"><b>Stage{{Math.floor(player.activeLevel/10)+"-"+player.activeLevel%10}}<br>{{LEVEL_DATA[player.activeLevel].name}}</b></div>
 <div style="position: absolute; right: 5px; top: 60px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px; width: 150px;" onclick="active = player.activeLevel,LeaveStage(),EnterLevel(active)">Restart (R)</button></div>
 <div style="position: absolute; right: 5px; top: 110px; font-size: 20px;" v-if="tmp.state == 'running'"><button v-bind:class="{thoughtUpg:true, unlocked:true}" style="height: 50px; width: 150px;" onclick="LeaveStage()">Exit (Esc)</button></div>

@@ -9,7 +9,7 @@ function gridSetUp()
 	}
 }
 var list = []
-const TOTAL_LEVEL = 69
+const TOTAL_LEVEL = 79
 const x="nothing", b="barrier"
 const u="u", d="d", l="l", r="r", U="U", D="D", L="L", R="R"
 const LEVEL_DATA = {
@@ -677,29 +677,32 @@ const LEVEL_DATA = {
 	    },
 	},
 	58:{
-		name:"Easiest in the whole pack...",
+		name:"Space-Filling Model Pt.II",
 		size:5,
 		time:15,
 		step:28,
-		medal:[1000,1700,2300],
+		medal:[1640,1760,1880],
 		map:{
-		    1:[6,x,b,-5],
-			2:[b,x,"x2",x],
-			3:[x,"x2",x,b],
-			4:[2,b,x,1],
+		    1:[-1,"^2",x,-1,-1],
+			2:["^2",-1,x,-1,-2],
+			3:[x,x,23,x,x],
+			4:[-2,"^2",x,-4,-2],
+			5:[-1,-2,x,"^1",-1],
 	    },
 	},
 	59:{
-		name:"Easiest in the whole pack...",
-		size:5,
+		name:"Rrhar'il",
+		size:6,
 		time:15,
-		step:28,
-		medal:[1000,1700,2300],
+		step:40,
+		medal:[1600,1800,2000],
 		map:{
-		    1:[6,x,b,-5],
-			2:[b,x,"x2",x],
-			3:[x,"x2",x,b],
-			4:[2,b,x,1],
+			1:[x,"x2","^2","^2",x,x],
+			2:[x,"^2",x,x,"^2",x],
+			3:[x,"^2",x,x,"x2",x],
+			4:[62,"^2","^2","^2",x,x],
+			5:[x,"^2",x,"^2",x,x],
+			6:[x,"x2",x,x,-5,x],
 	    },
 	},
 	61:{
@@ -830,6 +833,130 @@ const LEVEL_DATA = {
 			7:[-2,-2,u,14,x,"x2",x],
 	    },
 	},
+	71:{
+		name:"Piston",
+		size:3,
+		time:7,
+		step:8,
+		medal:[1410,1460,1510],
+		map:{
+			1:[x,x,1],
+			2:[x,-1,x],
+			3:[x,"m1",x],
+	    },
+	},
+	72:{
+		name:"Cycle through",
+		size:4,
+		time:7,
+		step:8,
+		medal:[1410,1460,1510],
+		map:{
+			1:[x,-1,x,x],
+			2:[x,"m2",x,x],
+			3:[x,x,1,x],
+			4:[x,x,x,x],
+	    },
+	},
+	73:{
+		name:"Move around",
+		size:4,
+		time:10,
+		step:15,
+		medal:[2020,2100,2180],
+		map:{
+			1:["m4",x,x,1],
+			2:[x,x,x,x],
+			3:[x,x,x,x],
+			4:[-1,x,x,x],
+	    },
+	},
+	74:{
+		name:"V",
+		size:5,
+		time:18,
+		step:28,
+		medal:[2520,2640,2760],
+		map:{
+			1:[x,x,x,"x2",x],
+			2:[x,x,x,x,x],
+			3:[x,9,"m6","x2",x],
+			4:[x,x,x,x,x],
+			5:[x,"x2",x,-3,x],
+	    },
+	},
+	75:{
+		name:"The Cubicle",
+		size:4,
+		time:5,
+		step:15,
+		medal:[1700,1900,2100],
+		map:{
+			1:[x,-3,x,b],
+			2:[-1,x,b,x],
+			3:[x,"m5",x,2],
+			4:[b,x,1,x],
+	    },
+	},
+	76:{
+		name:"Block in",
+		size:4,
+		time:15,
+		step:28,
+		medal:[2350,2450,2550],
+		map:{
+			1:[x,-5,x,x],
+			2:[x,l,l,l],
+			3:["x0",x,"x0",5],
+			4:[4,x,3,x],
+	    },
+	},
+	77:{
+		name:"Fallen_Cat's Scream Pt.II",
+		size:6,
+		time:20,
+		step:35,
+		medal:[2000,2300,2600],
+		map:{
+		    1:[x,1,r,r,r,d],
+			2:["x2",x,u,l,l,d],
+			3:[1,-2,b,5,u,d],
+			4:[x,1,x,5,x,d],
+			5:["^2",-1,13,"x2",d,l],
+			6:[-3,x,-2,"x0",l,1],
+	    },
+	},
+	78:{
+		name:"Retribution",
+		size:6,
+		time:18,
+		step:30,
+		medal:[1300,1500,1700],
+		map:{
+		    1:[x,x,3,-9,r,"x0"],
+			2:[b,b,3,1,r,"x0"],
+			3:["x0",l,1,3,1,l],
+			4:["x0",l,1,3,r,u],
+			5:[b,b,3,1,r,"x0"],
+			6:[x,x,3,1,r,"x0"],
+	    },
+	},
+	79:{
+		name:"DESTRUCTION 3,2,1",
+		size:7,
+		time:26,
+		step:40,
+		medal:[1050,1750,2450],
+		map:{
+		    1:[x,x,"x2",x,d,-3,-2],
+			2:[d,l,l,l,l,14,"^4"],
+			3:["x0",u,x,6,x,x,x],
+			4:[x,u,l,l,l,l,x],
+			5:[x,6,d,5,6,u,"x0"],
+			6:["^2",-2,r,r,r,r,u],
+			7:[-2,-2,u,14,x,"x2",x],
+	    },
+	},
 }
 function GetLevelMedal(level)
 {
@@ -937,4 +1064,15 @@ function calcWeight()
 		}
 	}
 	return weight
+}
+function calcAP() {
+	var totalPlatPack=0;
+    for(var i=1; i<=TOTAL_LEVEL/10;i++){
+        var flag=1;
+        for(var j=0; j<10; j++)
+            if(player.best[10*i+j]!=undefined&&player.best[10*i+j]!=null)
+				if(player.best[10*i+j]<LEVEL_DATA[10*i+j].medal[2])flag=0;
+		totalPlatPack+=flag;
+    }
+	return totalPlatPack;
 }
