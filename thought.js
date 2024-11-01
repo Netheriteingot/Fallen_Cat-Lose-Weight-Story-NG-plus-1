@@ -386,7 +386,7 @@ const LEVEL_DATA = {
 		size:6,
 		time:20,
 		step:40,
-		medal:[1500,3000,4500],
+		medal:[1780,4030,5280],
 		map:{
 		1:[x,-2,5,-3,x,-2],
 		2:[-3,x,"x2",x,-3,x],
@@ -459,7 +459,7 @@ const LEVEL_DATA = {
 		size:6,
 		time:20,
 		step:45,
-		medal:[2050,2250,2550],
+		medal:[2200,2700,3200],
 		map:{
 		    1:[x,1,"x2",x,"x1","x0"],
 			2:[1,x,x,x,1,x],
@@ -807,7 +807,7 @@ const LEVEL_DATA = {
 		size:6,
 		time:18,
 		step:30,
-		medal:[1300,1500,1700],
+		medal:[1450,1800,2150],
 		map:{
 		    1:[x,x,3,-9,r,"x0"],
 			2:[b,b,3,1,r,"x0"],

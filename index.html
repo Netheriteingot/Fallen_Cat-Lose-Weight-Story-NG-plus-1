@@ -41,6 +41,8 @@
       <span class="desc" style="color: white;font-size: 30px;">--- Update Log ---</span><br><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 28 2024 - Beta v1.2.6</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added a new type of block: Piston Blocks.</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Fixed conveyor blocks' CSS problem.</span><br>
+      <span class="desc" style="color: white;font-size: 16px;">- Changed the criteria of medals in some levels. Thanks for @EdenGameMaster for the optimal solutions!</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Added 7 new levels and a new pack (Pack 07).</span><br>
       <span class="desc" style="color: white;font-size: 16px;">- Packs 05 and 06 has been completed.</span><br><br>
       <span class="desc" style="color: white;font-size: 23px;">Oct 23 2024 - Beta v1.2.5</span><br>
@@ -237,130 +239,130 @@
                 <td v-for="(v2,index2) in LEVEL_DATA[player.activeLevel].map[index]"><button v-bind:class="{thoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])>0,pthoughtUpg:typeof(player.grid[index*10+index2+1]) == 'number'&&NaNCheck(player.grid[index*10+index2+1])<0,nothing:player.grid[index*10+index2+1] == 'nothing',barrier:player.grid[index*10+index2+1] == 'barrier',mult:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] != '0',delete:player.grid[index*10+index2+1][0] == 'x'&&player.grid[index*10+index2+1][1] == '0',xor:player.grid[index*10+index2+1][0] == '^',m:player.grid[index*10+index2+1][0] == 'm',arrowup:player.grid[index*10+index2+1] == 'u',arrowdown:player.grid[index*10+index2+1] == 'd',arrowleft:player.grid[index*10+index2+1] == 'l',arrowright:player.grid[index*10+index2+1] == 'r',unlocked:true,current:player.current%10==index2+1&&Math.floor(player.current/10)==index}" v-on:click="player.current = index*10+index2+1,player.clicks+=1">{{player.grid[index*10+index2+1]!='nothing'&&player.grid[index*10+index2+1]!='u'&&player.grid[index*10+index2+1]!='d'&&player.grid[index*10+index2+1]!='l'&&player.grid[index*10+index2+1]!='r'?(player.grid[index*10+index2+1][0]=="m"?player.grid[index*10+index2+1][1]:player.grid[index*10+index2+1]):''}}{{typeof(player.grid[index*10+index2+1]) == 'number'?'kg':''}}</button></td><br>
             </tr>
             </table><br>
-            <details v-if="player.activeLevel==11" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-1</summary>
+            <details v-if="player.activeLevel==11" class="detail">
+                <summary class="summary">Info for stage 1-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #aa00ff; text-decoration: underline;">Fat Block</span><br><span style="color: #000000;">The color of this type of block is pink. It stands for the fat inside Fallen_Cat's body. If the table of the stage doesn't contain any <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span>, You will beat the stage.</span></li>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #008cff; text-decoration: underline;">Exercise Block</span><br><span style="color: #000000;">The color of this type of block is blue. It stands for the lose weight plans of Fallen_Cat. You can merge <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> with <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> to Eliminate them and help Fallen_Cat to lose weight.</span></li>
-                    <li><span style="background-color:#00ff44 ;color:black ; padding:3px; margin:5px">How to play</span><span style="color: #000000;">use your mouse to select blocks and use <span style="color: #ff0000;">WASD (If you are a mobile player, please use the keyboard in the left-up corner)</span> on the keyboard to move blocks in the grid.<span style="color: #ff0000; text-decoration: underline;"> Your goal is eliminate all fat blocks in the table. If you have no exercise block but fat blocks, you'll fail the stage.</span></span></li>
+                    <li><span class="newblock">New block</span><span style="color: #aa00ff; text-decoration: underline;">Fat Block</span><br><span class="black">The color of this type of block is pink. It stands for the fat inside Fallen_Cat's body. If the table of the stage doesn't contain any <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span>, You will beat the stage.</span></li>
+                    <li><span class="newblock">New block</span><span style="color: #008cff; text-decoration: underline;">Exercise Block</span><br><span class="black">The color of this type of block is blue. It stands for the lose weight plans of Fallen_Cat. You can merge <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> with <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> to Eliminate them and help Fallen_Cat to lose weight.</span></li>
+                    <li><span class="howtoplay">How to play</span><span class="black">use your mouse to select blocks and use <span style="color: #ff0000;">WASD (If you are a mobile player, please use the keyboard in the left-up corner)</span> on the keyboard to move blocks in the grid.<span style="color: #ff0000; text-decoration: underline;"> Your goal is eliminate all fat blocks in the table. If you have no exercise block but fat blocks, you'll fail the stage.</span></span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==12" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-2</summary>
+            <details v-if="player.activeLevel==12" class="detail">
+                <summary class="summary">Info for stage 1-2</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can merge 2 <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> together and their values will be stacked.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">You can merge 2 <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> together and their values will be stacked.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==14" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-4</summary>
+            <details v-if="player.activeLevel==14" class="detail">
+                <summary class="summary">Info for stage 1-4</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">If you don't take exercise or eat too much during a day, your body will get fatter.<br>The value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> and <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> <span style="color: #ff0000;">WILL BE INCREASED BY 1</span> if you move them to an empty slot.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">If you don't take exercise or eat too much during a day, your body will get fatter.<br>The value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> and <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> <span style="color: #ff0000;">WILL BE INCREASED BY 1</span> if you move them to an empty slot.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==15" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-5</summary>
+            <details v-if="player.activeLevel==15" class="detail">
+                <summary class="summary">Info for stage 1-5</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Try to use less clicks and less moves to finish the stage. Then your score will get higher.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">Try to use less clicks and less moves to finish the stage. Then your score will get higher.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==16" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-6</summary>
+            <details v-if="player.activeLevel==16" class="detail">
+                <summary class="summary">Info for stage 1-6</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You cannot merge <span style="color: #aa00ff; text-underline-position: above;">2 fat blocks</span> together.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">You cannot merge <span style="color: #aa00ff; text-underline-position: above;">2 fat blocks</span> together.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==17" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-7</summary>
+            <details v-if="player.activeLevel==17" class="detail">
+                <summary class="summary">Info for stage 1-7</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">A "switch" refers to selecting a new block. Switches slightly contributes to your score!</span></li>
+                    <li><span class="hint">Hint</span><span class="black">A "switch" refers to selecting a new block. Switches slightly contributes to your score!</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==19" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 1-9</summary>
+            <details v-if="player.activeLevel==19" class="detail">
+                <summary class="summary">Info for stage 1-9</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Try to form a long path of blocks and combine blocks along the path at once. This will help reduce the number of clicks.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">Try to form a long path of blocks and combine blocks along the path at once. This will help reduce the number of clicks.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==21" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 2-1</summary>
+            <details v-if="player.activeLevel==21" class="detail">
+                <summary class="summary">Info for stage 2-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #000000; text-decoration: underline;">Barrier Block</span><br><span style="color: #000000;">A kind of block which cannot be moved or merged with any other blocks. It's useless.</span></li>
+                    <li><span class="newblock">New block</span><span style="color: #000000; text-decoration: underline;">Barrier Block</span><br><span class="black">A kind of block which cannot be moved or merged with any other blocks. It's useless.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==31" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 3-1</summary>
+            <details v-if="player.activeLevel==31" class="detail">
+                <summary class="summary">Info for stage 3-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #00ff48; text-decoration: underline;">Multiply Block</span><br><span style="color: #000000;">A kind of block which can multiply the value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> when they moved onto it. But itself cannot be moved to any place.</span></li>
+                    <li><span class="newblock">New block</span><span style="color: #00ff48; text-decoration: underline;">Multiply Block</span><br><span class="black">A kind of block which can multiply the value of <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> when they moved onto it. But itself cannot be moved to any place.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==34" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 3-4</summary>
+            <details v-if="player.activeLevel==34" class="detail">
+                <summary class="summary">Info for stage 3-4</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: #ff0000; text-decoration: underline;">Delete Block</span><br><span style="color: #000000;">A kind of block which can eliminate <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> when they moved onto it. But itself cannot be moved to any place.</span></li>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can reach a weight below 45 kilograms in some stages. Try to reach lower weight in these stage and get a higher score!</span></li>
+                    <li><span class="newblock">New block</span><span style="color: #ff0000; text-decoration: underline;">Delete Block</span><br><span class="black">A kind of block which can eliminate <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> when they moved onto it. But itself cannot be moved to any place.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">You can reach a weight below 45 kilograms in some stages. Try to reach lower weight in these stage and get a higher score!</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==39" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 3-9</summary>
+            <details v-if="player.activeLevel==39" class="detail">
+                <summary class="summary">Info for stage 3-9</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">The modder's brain went spasmodic on doing this one.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">The modder's brain went spasmodic on doing this one.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==51" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 5-1</summary>
+            <details v-if="player.activeLevel==51" class="detail">
+                <summary class="summary">Info for stage 5-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: rgb(221, 160, 221); text-decoration: underline;">XOR Block</span><br><span style="color: #000000;">When you move your <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> onto it, their absolute value will be XORed (^)! But itself cannot be moved to any place.</span></li>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">If you don't know what XOR is, you can click </span><a style="color: #000000;"href="https://en.wikipedia.org/wiki/Exclusive_or">here</a><span style="color: #000000;"> to read.</span></li>
+                    <li><span class="newblock">New block</span><span style="color: rgb(221, 160, 221); text-decoration: underline;">XOR Block</span><br><span class="black">When you move your <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> onto it, their absolute value will be XORed (^)! But itself cannot be moved to any place.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">If you don't know what XOR is, you can click </span><a class="black"href="https://en.wikipedia.org/wiki/Exclusive_or">here</a><span class="black"> to read.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==52" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 5-2</summary>
+            <details v-if="player.activeLevel==52" class="detail">
+                <summary class="summary">Info for stage 5-2</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You will need some strategy when using this block...</span></li>
+                    <li><span class="hint">Hint</span><span class="black">You will need some strategy when using this block...</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==57" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 5-7</summary>
+            <details v-if="player.activeLevel==57" class="detail">
+                <summary class="summary">Info for stage 5-7</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">The placing of tiles can sometimes (mathematically) prevent you from making use of the XOR tile in the way you want. Think of other ways.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">The placing of tiles can sometimes (mathematically) prevent you from making use of the XOR tile in the way you want. Think of other ways.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==61" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 6-1</summary>
+            <details v-if="player.activeLevel==61" class="detail">
+                <summary class="summary">Info for stage 6-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: black; text-decoration: underline;">Slide Block</span><br><span style="color: #000000;">When you move your <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> onto it, they will slide to the direction of the slide block! But itself cannot be moved to any place, and it can only be used once.</span></li>
+                    <li><span class="newblock">New block</span><span style="color: black; text-decoration: underline;">Slide Block</span><br><span class="black">When you move your <span style="color: #008cff; text-underline-position: above;">exercise blocks</span> or <span style="color: #aa00ff; text-underline-position: above;">fat blocks</span> onto it, they will slide to the direction of the slide block! But itself cannot be moved to any place, and it can only be used once.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==62" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 6-2</summary>
+            <details v-if="player.activeLevel==62" class="detail">
+                <summary class="summary">Info for stage 6-2</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Slide blocks will slide your block onto other blocks... unless it is unable to. Try it out!</span></li>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">This is a perfect example of why the solution with the least weight is not always the best.</span></li>
+                    <li><span class="hint">Hint</span><span class="black">Slide blocks will slide your block onto other blocks... unless it is unable to. Try it out!</span></li>
+                    <li><span class="hint">Hint</span><span class="black">This is a perfect example of why the solution with the least weight is not always the best.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==63" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 6-3</summary>
+            <details v-if="player.activeLevel==63" class="detail">
+                <summary class="summary">Info for stage 6-3</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">Slide blocks can be used only once, but there is a crossroad here. Figure it out itself!</span></li>
+                    <li><span class="hint">Hint</span><span class="black">Slide blocks can be used only once, but there is a crossroad here. Figure it out itself!</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==66" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 6-6</summary>
+            <details v-if="player.activeLevel==66" class="detail">
+                <summary class="summary">Info for stage 6-6</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">You can prevent the fat tile from increasing by blocking a fat tile in front of where it is going to go!</span></li>
+                    <li><span class="hint">Hint</span><span class="black">You can prevent the fat tile from increasing by blocking a fat tile in front of where it is going to go!</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==71" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 7-1</summary>
+            <details v-if="player.activeLevel==71" class="detail">
+                <summary class="summary">Info for stage 7-1</summary>
                 <ul>
-                    <li><span style="background-color:#fb00ff ;color:black ; padding:3px; margin:5px">New block</span><span style="color: rgb(19,21,25); text-decoration: underline;">Piston Block</span><br><span style="color: #000000;">When you move it, it will push all the blocks in the whole row or column altogether!</span></li>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">A Piston Block can only be used a finite number of time. The remaining chances of using the block is written on it.</span></li>
+                    <li><span class="newblock">New block</span><span style="color: rgb(19,21,25); text-decoration: underline;">Piston Block</span><br><span class="black">When you move it, it will push all the blocks in the whole row or column altogether!</span></li>
+                    <li><span class="hint">Hint</span><span class="black">A Piston Block can only be used a finite number of time. The remaining chances of using the block is written on it.</span></li>
                 </ul>
             </details>
-            <details v-if="player.activeLevel==72" style="position: relative;width:80%;left:10%;">
-                <summary style="color:#000000;position:relative;">Info for stage 7-2</summary>
+            <details v-if="player.activeLevel==72" class="detail">
+                <summary class="summary">Info for stage 7-2</summary>
                 <ul>
-                    <li><span style="background-color:#fff200 ;color:black ; padding:3px; margin:5px">Hint</span><span style="color: #000000;">When a block is on the edge of the map when it is pushed by a Piston Block, it will instead go to the other side of the map!</span></li>
+                    <li><span class="hint">Hint</span><span class="black">When a block is on the edge of the map when it is pushed by a Piston Block, it will instead go to the other side of the map!</span></li>
                 </ul>
             </details>
         </div>

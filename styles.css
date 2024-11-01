@@ -506,7 +506,7 @@ body
       hsla(0,0%,100%,.14) 15px,
       transparent 0,
       transparent 30px);
-      background-size: 10000% 10000%;
+      background-size: 1000% 1000%;
       background-position: 0% 0%;
     width: 100px;
     height: 100px;
@@ -1070,6 +1070,36 @@ button:active{
     padding: 5px 5px 5px 5px;
     cursor: pointer;
     animation: moveRight 20s linear infinite;
+}
+.summary {
+    color: #000000;
+    position: relative;
+}
+.newblock {
+    background-color: #fb00ff;
+    color: black;
+    padding: 3px;
+    margin: 5px;
+}
+.hint {
+    background-color: #fff200;
+    color: black;
+    padding: 3px;
+    margin: 5px;
+}
+.howtoplay {
+    background-color: #00ff44;
+    color: black;
+    padding: 3px;
+    margin: 5px;
+}
+.black {
+    color: black;
+}
+.detail {
+    position: relative;
+    width: 80%;
+    left: 10%;
 }
 [tooltip] {
 	position: relative;
